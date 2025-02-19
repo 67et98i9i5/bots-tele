@@ -1,0 +1,27 @@
+{
+    "api": "https://your-api-documentation-link.com",
+    "socials": [
+        {
+            "name": "Twitter",
+            "link": "https://twitter.com/yourhandle"
+        },
+        {
+            "name": "Instagram",
+            "link": "https://instagram.com/yourhandle"
+        },
+        {
+            "name": "Discord",
+            "link": "https://discord.gg/yourserver"
+        }
+    ],
+    "channels": [
+        {
+            "name": "YouTube",
+            "link": "https://youtube.com/yourchannel"
+        },
+        {
+            "name": "Telegram",
+            "link": "https://t.me/yourchannel"
+        }
+    ]
+}

@@ -1,0 +1,550 @@
+{
+  "anime_list": {
+    "The apothecary diaries": {
+      "Season 1": {
+        "Episode 1": {
+          "ep_name": "Episode 1",
+          "ep_number": "1",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 2": {
+          "ep_name": "Episode 2",
+          "ep_number": "2",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 3": {
+          "ep_name": "Episode 3",
+          "ep_number": "3",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 4": {
+          "ep_name": "Episode 4",
+          "ep_number": "4",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 5": {
+          "ep_name": "Episode 5",
+          "ep_number": "5",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 6": {
+          "ep_name": "Episode 6",
+          "ep_number": "6",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 7": {
+          "ep_name": "Episode 7",
+          "ep_number": "7",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 8": {
+          "ep_name": "Episode 8",
+          "ep_number": "8",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 9": {
+          "ep_name": "Episode 9",
+          "ep_number": "9",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 10": {
+          "ep_name": "Episode 10",
+          "ep_number": "10",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 11": {
+          "ep_name": "Episode 11",
+          "ep_number": "11",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 12": {
+          "ep_name": "Episode 12",
+          "ep_number": "12",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 13": {
+          "ep_name": "Episode 13",
+          "ep_number": "13",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 14": {
+          "ep_name": "Episode 14",
+          "ep_number": "14",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 15": {
+          "ep_name": "Episode 15",
+          "ep_number": "15",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 16": {
+          "ep_name": "Episode 16",
+          "ep_number": "16",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 17": {
+          "ep_name": "Episode 17",
+          "ep_number": "17",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 18": {
+          "ep_name": "Episode 18",
+          "ep_number": "18",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 19": {
+          "ep_name": "Episode 19",
+          "ep_number": "19",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 20": {
+          "ep_name": "Episode 20",
+          "ep_number": "20",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 21": {
+          "ep_name": "Episode 21",
+          "ep_number": "21",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 22": {
+          "ep_name": "Episode 22",
+          "ep_number": "22",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 23": {
+          "ep_name": "Episode 23",
+          "ep_number": "23",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 24": {
+          "ep_name": "Episode 24",
+          "ep_number": "24",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        }
+      },
+      "Season 2": {
+        "Episode 1": {
+          "ep_name": "Episode 1",
+          "ep_number": "1",
+          "qualities": {
+            "360p": {
+              "file_size": "64.50 MB",
+              "file_url": "https://www.mediafire.com/file/cfgue09ttigio9i/480p.mp4/file"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 2": {
+          "ep_name": "Episode 2",
+          "ep_number": "2",
+          "qualities": {
+            "360p": {
+              "file_size": "43.18 MB",
+              "file_url": "https://www.mediafire.com/file/m8xk8u9i01cd8ak/480p.mp4/file"
+            },
+            "720p": {
+              "file_size": "101.55 MB",
+              "file_url": "https://www.mediafire.com/file/snn5gv31hvftrts/720p.mp4/file"
+            },
+            "1080p": {
+              "file_size": "177.11 MB",
+              "file_url": "https://www.mediafire.com/file/85fy9fq0fnqn7fz/1080p.mp4/file"
+            }
+          }
+        },
+        "Episode 3": {
+          "ep_name": "Episode 3",
+          "ep_number": "3",
+          "qualities": {
+            "360p": {
+              "file_url": "https://www.mediafire.com/file/zdue94alwhsg7ry/480p_.mp4/file",
+              "file_size": "43.18 MB"
+            },
+            "720p": {
+              "file_url": "https://www.mediafire.com/file/4arhk12hkukcja1/720p.mp4/file",
+              "file_size": "74.43 MB"
+            },
+            "1080p": {
+              "file_url": "https://www.mediafire.com/file/9m8ug5rj6keplxq/1080p_/file",
+              "file_size": "112.44 MB"
+            }
+          }
+        },
+        "Episode 4": {
+          "ep_name": "Episode 4",
+          "ep_number": "4",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 5": {
+          "ep_name": "Episode 5",
+          "ep_number": "5",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 6": {
+          "ep_name": "Episode 6",
+          "ep_number": "6",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        }
+      }
+    }
+  }
+}

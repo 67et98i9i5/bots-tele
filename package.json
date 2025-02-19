@@ -1,0 +1,19 @@
+{
+  "name": "newbot2",
+  "version": "1.0.0",
+  "main": "bot.js",
+  "scripts": {
+    "start": "nodemon bot.js",
+    "make": "nodemon filemaker.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "node-fetch": "^3.3.2",
+    "telegraf": "^4.16.3"
+  }
+}
