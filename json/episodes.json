@@ -545,6 +545,459 @@
           }
         }
       }
+    },
+    "Solo Levelling": {
+      "Season 1": {
+        "Episode 1": {
+          "ep_name": "Episode 1",
+          "ep_number": "1",
+          "qualities": {
+            "360p": {
+              "file_url": "https://drive.google.com/file/d/17aHooQ4lj-dGgegXlMWF8xQYK4xs-PpF/view?usp=drive_link",
+              "file_size": "32.6 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/1IfNnG_oa2j0RcfCkeBstY-3CTDMqHbqU/view?usp=sharing",
+              "file_size": "112.4 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1v818iKhJZC5QhuzdMF7_ACLIDFacgCID/view?usp=sharing",
+              "file_size": "200.5 MB"
+            }
+          }
+        },
+        "Episode 2": {
+          "ep_name": "Episode 2",
+          "ep_number": "2",
+          "qualities": {
+            "360p": {
+              "file_url": "https://drive.google.com/file/d/1UecXsWKtwH4WeOIOBHk4mM7DT2bD_Wd7/view?usp=sharing",
+              "file_size": "32.1 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/12EESU32R_cjbnCh1vim7vSbZu8yFYiAz/view?usp=sharing",
+              "file_size": "111 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1PgqVCTx2J4MA4gHKZHBQB-U9iN99r3LM/view?usp=sharing",
+              "file_size": "203.6 MB"
+            }
+          }
+        },
+        "Episode 3": {
+          "ep_name": "Episode 3",
+          "ep_number": "3",
+          "qualities": {
+            "360p": {
+              "file_url": "https://drive.google.com/file/d/1110WyIwGL1zs3Enn-NVSQTNPKUYKideR/view?usp=sharing",
+              "file_size": "32.2 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/1I1-iZFMZrgaENye0hKxlq3Kh_n9lLiux/view?usp=sharing",
+              "file_size": "111.1 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1oxuTodAo0haOJWTaJ1LHQr2sVB-HKfsJ/view?usp=sharing",
+              "file_size": "209.7 MB"
+            }
+          }
+        },
+        "Episode 4": {
+          "ep_name": "Episode 4",
+          "ep_number": "4",
+          "qualities": {
+            "360p": {
+              "file_url": "https://drive.google.com/file/d/1zTxpt4F_MhmtoU5psFX2dLJF5EqXYbG-/view?usp=sharing",
+              "file_size": "33.2 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/1Tkg-DG5eKWILYEYXmRLpBc8v4m33eHpL/view?usp=sharing",
+              "file_size": "114.7 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/12oSY_9UzjdIVsAewzTQsSCIxwqAiwLO9/view?usp=sharing",
+              "file_size": "213.7 MB"
+            }
+          }
+        },
+        "Episode 5": {
+          "ep_name": "Episode 5",
+          "ep_number": "5",
+          "qualities": {
+            "360p": {
+              "file_url": "https://drive.google.com/file/d/1nUmC6atW7mDHWOgeONsrtbdjwoVeAyci/view?usp=sharing"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/1oJvU8JNxa9oExcCyUqg7HyfW9zPWTMhV/view?usp=sharing"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1CRcJ2CEcWqA0JOYHt9cJzJJqMFE5UhZv/view?usp=sharing"
+            }
+          }
+        },
+        "Episode 6": {
+          "ep_name": "Episode 6",
+          "ep_number": "6",
+          "qualities": {
+            "360p": {
+              "file_url": "https://google.com",
+              "file_size": "0 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/13i-VXIwubigxnZXa7CL9kmH460v1iaHV/view?usp=sharing",
+              "file_size": "131.6 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1Jdv3KTnV7GArTf4J97-8ceNV33-jRlw9/view?usp=sharing",
+              "file_size": "240.3 MB"
+            }
+          }
+        },
+        "Episode 7": {
+          "ep_name": "Episode 7",
+          "ep_number": "7",
+          "qualities": {
+            "360p": {
+              "file_url": "https://google.com",
+              "file_size": "0 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/1URY1r_7jOjoVGZEy7C1qnm2Pf6nLX6hT/view?usp=sharing",
+              "file_size": "138.4 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1wj8PM-jac6jph6vDiOjKHi_MxtqDcfyZ/view?usp=sharing",
+              "file_size": "254.7 MB"
+            }
+          }
+        },
+        "Episode 8": {
+          "ep_name": "Episode 8",
+          "ep_number": "8",
+          "qualities": {
+            "360p": {
+              "file_url": "https://drive.google.com/file/d/1yVfA8UAYvFpxjzx4suTjSeeWpT6NPSnx/view?usp=sharing",
+              "file_size": "27.2 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/1YCY4ubKOfGIGluhjAULn0cA8XPYbNwX0/view?usp=sharing",
+              "file_size": "93.7 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1JwWYLFv4qNHqIlFme38_HpnzlOXSkyDO/view?usp=sharing",
+              "file_size": "170.7 MB"
+            }
+          }
+        },
+        "Episode 9": {
+          "ep_name": "Episode 9",
+          "ep_number": "9",
+          "qualities": {
+            "360p": {
+              "file_url": "https://google.com",
+              "file_size": "0 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/1A4Oa52muAGCm3lDjDobBo1FV-pNxGg-q/view?usp=sharing",
+              "file_size": "118.4 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1tMMheONVWs0QKFpcR-YCf7Ff68ud1Rh0/view?usp=sharing",
+              "file_size": "215.7 MB"
+            }
+          }
+        },
+        "Episode 10": {
+          "ep_name": "Episode 10",
+          "ep_number": "10",
+          "qualities": {
+            "360p": {
+              "file_url": "https://drive.google.com/file/d/1YQlDw-c45l_dSeskDnYoYR2C3RFlY1Y_/view?usp=sharing",
+              "file_size": "27.8 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/1XpQMJUgbfMz6wUi_PDwotw8-7rWt_4Wo/view?usp=sharing",
+              "file_size": "95.9 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1qme6RyiK5-ab-K5zbqB6srXknscQIXuo/view?usp=sharing",
+              "file_size": "173.9 MB"
+            }
+          }
+        },
+        "Episode 11": {
+          "ep_name": "Episode 11",
+          "ep_number": "11",
+          "qualities": {
+            "360p": {
+              "file_url": "https://drive.google.com/file/d/1rGsuLjoQg1jzFCrPxuUJsZMefxGdt6eM/view?usp=sharing",
+              "file_size": "38 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/1wsgU0R3GuFGWiXOKqvXEbNvmD523PX6r/view?usp=sharing",
+              "file_size": "131.6 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1qvwYlayr9C8loXLVpDfCJcNWQkQoWtsi/view?usp=sharing",
+              "file_size": "241.2 MB"
+            }
+          }
+        },
+        "Episode 12": {
+          "ep_name": "Episode 12",
+          "ep_number": "12",
+          "qualities": {
+            "360p": {
+              "file_url": "https://drive.google.com/file/d/1YGVGUexI33Vpxs-CCI5lS2syn6Guz88k/view?usp=sharing",
+              "file_size": "37.6 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/1haM1VvB8q6gs5rvf13YEXdlwk2Of5qP9/view?usp=sharing",
+              "file_size": "130.3 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1nnBx6WsGnUgusrMmJKbZV6o5BpvjEglC/view?usp=sharing",
+              "file_size": "238.4 MB"
+            }
+          }
+        },
+        "Episode 13": {
+          "ep_name": "Episode 13",
+          "ep_number": "13",
+          "qualities": {
+            "360p": {
+              "file_url": "https://drive.google.com/file/d/1nwdFTr433s3OvPnTMrgWXdnZIME0hVwI/view?usp=sharing",
+              "file_size": "76.3 MB"
+            },
+            "720p": {
+              "file_url": "https://drive.google.com/file/d/1EF6RO02gL-KFCDPJHQuBC3IKsPenhyk-/view?usp=sharing",
+              "file_size": "139.4 MB"
+            },
+            "1080p": {
+              "file_url": "https://drive.google.com/file/d/1sd-MVBuJvMj0Xd5H-0n8gThnnkt0Pu_0/view?usp=sharing",
+              "file_size": "259.1 MB"
+            }
+          }
+        }
+      },
+      "Season 2": {
+        "Episode 1": {
+          "ep_name": "Episode 1",
+          "ep_number": "1",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 2": {
+          "ep_name": "Episode 2",
+          "ep_number": "2",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 3": {
+          "ep_name": "Episode 3",
+          "ep_number": "3",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 4": {
+          "ep_name": "Episode 4",
+          "ep_number": "4",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 5": {
+          "ep_name": "Episode 5",
+          "ep_number": "5",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 6": {
+          "ep_name": "Episode 6",
+          "ep_number": "6",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 7": {
+          "ep_name": "Episode 7",
+          "ep_number": "7",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 8": {
+          "ep_name": "Episode 8",
+          "ep_number": "8",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 9": {
+          "ep_name": "Episode 9",
+          "ep_number": "9",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 10": {
+          "ep_name": "Episode 10",
+          "ep_number": "10",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 11": {
+          "ep_name": "Episode 11",
+          "ep_number": "11",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        },
+        "Episode 12": {
+          "ep_name": "Episode 12",
+          "ep_number": "12",
+          "qualities": {
+            "360p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "720p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            },
+            "1080p": {
+              "file_size": "N/A",
+              "file_url": "N/A"
+            }
+          }
+        }
+      }
     }
   }
 }
