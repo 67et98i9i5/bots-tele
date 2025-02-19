@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 const { Telegraf, Markup } = require("telegraf");
 const fs = require("fs");
@@ -182,6 +183,28 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+const usersFile = "json/users.json";
+let usersData = {};
+
+if (fs.existsSync(usersFile)) {
+    usersData = JSON.parse(fs.readFileSync(usersFile, "utf8"));
+}
+
+bot.start((ctx) => {
+    const userId = ctx.from.id;
+    const timestamp = new Date().toISOString();
+
+    if (!usersData[userId]) {
+        usersData[userId] = { startedAt: timestamp };
+        fs.writeFileSync(usersFile, JSON.stringify(usersData, null, 2));
+    }
+
+    console.log(`User ${userId} started the bot at ${timestamp}`);
+
+    showAnimeList(ctx, 1);
+});
+
 
 // ✅ Launch Bot
 bot.launch();
