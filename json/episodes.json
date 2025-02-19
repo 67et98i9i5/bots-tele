@@ -640,8 +640,8 @@
           "ep_number": "6",
           "qualities": {
             "360p": {
-              "file_url": "https://google.com",
-              "file_size": "0 MB"
+              "file_url": "N/A",
+              "file_size": "N/A"
             },
             "720p": {
               "file_url": "https://drive.google.com/file/d/13i-VXIwubigxnZXa7CL9kmH460v1iaHV/view?usp=sharing",
@@ -658,8 +658,8 @@
           "ep_number": "7",
           "qualities": {
             "360p": {
-              "file_url": "https://google.com",
-              "file_size": "0 MB"
+              "file_url": "N/A",
+              "file_size": "N/A"
             },
             "720p": {
               "file_url": "https://drive.google.com/file/d/1URY1r_7jOjoVGZEy7C1qnm2Pf6nLX6hT/view?usp=sharing",
@@ -694,8 +694,8 @@
           "ep_number": "9",
           "qualities": {
             "360p": {
-              "file_url": "https://google.com",
-              "file_size": "0 MB"
+              "file_url": "N/A",
+              "file_size": "N/A"
             },
             "720p": {
               "file_url": "https://drive.google.com/file/d/1A4Oa52muAGCm3lDjDobBo1FV-pNxGg-q/view?usp=sharing",
