@@ -543,6 +543,24 @@
               "file_url": "https://www.mediafire.com/file/blcg7xtjojxs4hu/1080p_%255B122_MB%255D/file"
             }
           }
+        },
+        "Episode 7": {
+          "ep_name": "Episode 7",
+          "ep_number": "7",
+          "qualities": {
+            "360p": {
+              "file_size": "39.80 MB",
+              "file_url": "https://www.mediafire.com/file/xteepu8jyzex1xa/360p_%255B29.80_MB%255D/file"
+            },
+            "720p": {
+              "file_size": "77.12 MB",
+              "file_url": "https://www.mediafire.com/file/j5ihm4xtt3vhfgc/720p_%255B77.12_MB%255D/file"
+            },
+            "1080p": {
+              "file_size": "122.03 MB",
+              "file_url": "https://www.mediafire.com/file/fw3fe4gzkpk2luu/1080p_%255B122.03_MB%255D/file"
+            }
+          }
         }
       }
     },
@@ -993,7 +1011,7 @@
             },
             "1080p": {
               "file_size": "N/A",
-              "file_url": "1"
+              "file_url": "N/A"
             }
           }
         }
