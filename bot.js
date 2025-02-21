@@ -1,139 +1,151 @@
-
 require("dotenv").config();
 const { Telegraf, Markup } = require("telegraf");
-const fs = require("fs");
-const extras = require("./extras");
+const axios = require("axios");
 const express = require("express");
 const app = express();
 
 const bot = new Telegraf(process.env.BOT_TOKEN1);
-const personalities = JSON.parse(
-    fs.readFileSync("json/personalities.json", "utf8"),
-);
-const episodesData = JSON.parse(fs.readFileSync("json/episodes.json", "utf8"));
+const API_URL = "https://noasaga-api-main.onrender.com/anime/data";
 
-let userPersonalities = {};
-const DEFAULT_PERSONALITY = "Rias Gremory";
+// ✅ Fetch Anime Data
+let cachedData = {}; // Store previous data for comparison
 
-// ✅ Register Commands
-["api", "socials", "channels"].forEach((cmd) =>
-    bot.command(cmd, (ctx) =>
-        extras[`send${cmd.charAt(0).toUpperCase() + cmd.slice(1)}`](ctx),
-    ),
-);
+const fetchAnimeData = async () => {
+    try {
+        const response = await axios.get(API_URL);
+        console.log("✅ API Data Fetched Successfully");
 
-const getPrompt = (ctx, key) => {
-    return (
-        personalities[userPersonalities[ctx.from.id] || DEFAULT_PERSONALITY]?.[
-            key
-        ] || `❌ Prompt not found for ${key}`
-    );
+        const newData = response.data;
+        if (JSON.stringify(newData) !== JSON.stringify(cachedData)) {
+            console.log("🔄 New update detected!");
+            cachedData = newData;
+            // You can notify users about the update here
+        } else {
+            console.log("✅ No new updates.");
+        }
+
+        return newData;
+    } catch (error) {
+        console.error("❌ Failed to fetch anime data:", error.message);
+        return null;
+    }
 };
 
+// ✅ Check for updates every 30 seconds
+setInterval(fetchAnimeData, 30000);
+
+// ✅ Fetch immediately when the bot starts
+fetchAnimeData();
+
+// ✅ Paginate Helper
 const paginate = (items, page = 1, pageSize = 10) => ({
     paginatedItems: items.slice((page - 1) * pageSize, page * pageSize),
     totalPages: Math.ceil(items.length / pageSize),
 });
 
+// ✅ Pagination Buttons
 const paginationButtons = (prefix, page, totalPages) => {
     let buttons = [];
     if (page > 1)
-        buttons.push(
-            Markup.button.callback("⬅️ Prev", `${prefix}_${page - 1}`),
-        );
+        buttons.push(Markup.button.callback("⬅️ Prev", `${prefix}_${page - 1}`));
     if (page < totalPages)
-        buttons.push(
-            Markup.button.callback("Next ➡️", `${prefix}_${page + 1}`),
-        );
+        buttons.push(Markup.button.callback("Next ➡️", `${prefix}_${page + 1}`));
     return buttons.length > 0 ? [buttons] : [];
 };
 
 // ✅ Show Anime List
-bot.start((ctx) => showAnimeList(ctx, 1));
+bot.start(async (ctx) => {
+    const animeData = await fetchAnimeData();
+    if (!animeData) return ctx.reply("❌ Failed to fetch anime list");
 
-const showAnimeList = (ctx, page) => {
-    const animeList = Object.keys(episodesData.anime_list);
-    if (!animeList.length) return ctx.reply(getPrompt(ctx, "no_anime"));
+    const animeList = Object.keys(animeData);
+    if (!animeList.length) return ctx.reply("❌ No anime found");
 
+    const { paginatedItems, totalPages } = paginate(animeList, 1);
+
+    ctx.reply(
+        "🎭 Select an anime:",
+        Markup.inlineKeyboard([
+            ...paginatedItems.map((anime) => [Markup.button.callback(anime, `anime_${anime}`)]),
+            ...paginationButtons("anime_page", 1, totalPages),
+        ])
+    );
+});
+
+bot.action(/^anime_page_(\d+)$/, async (ctx) => {
+    const page = parseInt(ctx.match[1]);
+    const animeData = await fetchAnimeData();
+    if (!animeData) return ctx.reply("❌ Failed to fetch anime list");
+
+    const animeList = Object.keys(animeData);
     const { paginatedItems, totalPages } = paginate(animeList, page);
 
-    ctx.reply(
-        getPrompt(ctx, "select_anime"),
+    ctx.editMessageReplyMarkup(
         Markup.inlineKeyboard([
-            ...paginatedItems.map((anime) => [
-                Markup.button.callback(anime, `anime_${anime}`),
-            ]),
+            ...paginatedItems.map((anime) => [Markup.button.callback(anime, `anime_${anime}`)]),
             ...paginationButtons("anime_page", page, totalPages),
-        ]),
+        ])
     );
-};
-
-bot.action(/^anime_page_(\d+)$/, (ctx) =>
-    showAnimeList(ctx, parseInt(ctx.match[1])),
-);
+});
 
 // ✅ Anime Selection
-bot.action(/^anime_(.+)$/, (ctx) => {
+bot.action(/^anime_(.+)$/, async (ctx) => {
     const anime = ctx.match[1];
-    const seasons = Object.keys(episodesData.anime_list?.[anime] || {});
+    const animeData = await fetchAnimeData();
+    if (!animeData || !animeData[anime]) return ctx.reply("❌ Anime not found");
 
-    if (!seasons.length) return ctx.reply(getPrompt(ctx, "anime_not_found"));
+    const seasons = Object.keys(animeData[anime]).filter((s) => s !== "anime_id");
+    if (!seasons.length) return ctx.reply("❌ No seasons available for this anime");
 
     ctx.reply(
-        getPrompt(ctx, "select_season").replace("{anime}", anime),
+        `📺 Select a season for *${anime}*:`,
         Markup.inlineKeyboard(
-            seasons.map((season) => [
-                Markup.button.callback(season, `season_${anime}_${season}`),
-            ]),
-        ),
+            seasons.map((season) => [Markup.button.callback(season, `season_${anime}_${season}`)])
+        )
     );
 });
 
 // ✅ Show Episodes
-const showEpisodeList = (ctx, anime, season, page = 1) => {
-    const eps = Object.keys(episodesData.anime_list?.[anime]?.[season] || {});
-    if (!eps.length) return ctx.reply(getPrompt(ctx, "season_not_found"));
+const showEpisodeList = async (ctx, anime, season, page = 1) => {
+    const animeData = await fetchAnimeData();
+    if (!animeData || !animeData[anime] || !animeData[anime][season])
+        return ctx.reply("❌ Season not found");
 
-    const { paginatedItems, totalPages } = paginate(eps, page);
+    const episodes = Object.keys(animeData[anime][season]).filter((e) => e !== "season_id");
+    const { paginatedItems, totalPages } = paginate(episodes, page);
 
     ctx.reply(
-        getPrompt(ctx, "episode_list")
-            .replace("{anime}", anime)
-            .replace("{season}", season),
+        `📜 Episodes for *${anime} - ${season}*:`,
         Markup.inlineKeyboard([
             ...paginatedItems.map((ep) => [
                 Markup.button.callback(
-                    episodesData.anime_list[anime][season][ep].ep_name,
-                    `episode_${anime}_${season}_${ep}`,
+                    animeData[anime][season][ep].ep_name,
+                    `episode_${anime}_${season}_${ep}`
                 ),
             ]),
-            ...paginationButtons(
-                `episode_page_${anime}_${season}`,
-                page,
-                totalPages,
-            ),
-        ]),
+            ...paginationButtons(`episode_page_${anime}_${season}`, page, totalPages),
+        ])
     );
 };
 
-bot.action(/^season_(.+)_(.+)$/, (ctx) => {
+bot.action(/^season_(.+)_(.+)$/, async (ctx) => {
     const [anime, season] = ctx.match.slice(1);
-    showEpisodeList(ctx, anime, season, 1);
+    await showEpisodeList(ctx, anime, season, 1);
 });
 
-bot.action(/^episode_page_(.+)_(.+)_(\d+)$/, (ctx) => {
+bot.action(/^episode_page_(.+)_(.+)_(\d+)$/, async (ctx) => {
     const [anime, season, page] = ctx.match.slice(1);
-    showEpisodeList(ctx, anime, season, parseInt(page));
+    await showEpisodeList(ctx, anime, season, parseInt(page));
 });
 
 // ✅ Episode Selection
-bot.action(/^episode_(.+)_(.+)_(.+)$/, (ctx) => {
+bot.action(/^episode_(.+)_(.+)_(.+)$/, async (ctx) => {
     const [anime, season, ep] = ctx.match.slice(1);
-    const epData = episodesData.anime_list?.[anime]?.[season]?.[ep];
+    const animeData = await fetchAnimeData();
+    if (!animeData || !animeData[anime] || !animeData[anime][season][ep])
+        return ctx.reply("❌ Episode not found");
 
-    if (!epData) return ctx.reply(getPrompt(ctx, "episode_not_found"));
-
-    console.log(`Selected Episode: ${anime} - ${season} - ${ep}`);
+    const epData = animeData[anime][season][ep];
 
     const qualityButtons = Object.entries(epData.qualities || {})
         .filter(([_, data]) => data.file_url?.startsWith("http"))
@@ -142,39 +154,16 @@ bot.action(/^episode_(.+)_(.+)_(.+)$/, (ctx) => {
         ]);
 
     if (!qualityButtons.length) {
-        return ctx.reply(
-            getPrompt(ctx, "no_links").replace("{episode}", epData.ep_name),
-        );
+        return ctx.reply(`❌ No download links available for *${epData.ep_name}*`);
     }
 
     ctx.reply(
-        getPrompt(ctx, "download_options").replace("{episode}", epData.ep_name),
-        Markup.inlineKeyboard(qualityButtons),
+        `📥 Download options for *${epData.ep_name}*:`,
+        Markup.inlineKeyboard(qualityButtons)
     );
 });
 
-// ✅ Change Personality
-bot.command("changepersonality", (ctx) => {
-    ctx.reply(
-        getPrompt(ctx, "select_personality"),
-        Markup.inlineKeyboard(
-            Object.keys(personalities).map((p) => [
-                Markup.button.callback(p, `set_personality_${p}`),
-            ]),
-        ),
-    );
-});
-
-bot.action(/^set_personality_(.+)$/, (ctx) => {
-    userPersonalities[ctx.from.id] = ctx.match[1];
-    ctx.reply(
-        getPrompt(ctx, "personality_changed").replace(
-            "{personality}",
-            ctx.match[1],
-        ),
-    );
-});
-
+// ✅ Express Server
 app.get("/", (req, res) => {
     res.send("Bot is running...");
 });
@@ -184,28 +173,6 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
 
-const usersFile = "json/users.json";
-let usersData = {};
-
-if (fs.existsSync(usersFile)) {
-    usersData = JSON.parse(fs.readFileSync(usersFile, "utf8"));
-}
-
-bot.start((ctx) => {
-    const userId = ctx.from.id;
-    const timestamp = new Date().toISOString();
-
-    if (!usersData[userId]) {
-        usersData[userId] = { startedAt: timestamp };
-        fs.writeFileSync(usersFile, JSON.stringify(usersData, null, 2));
-    }
-
-    console.log(`User ${userId} started the bot at ${timestamp}`);
-
-    showAnimeList(ctx, 1);
-});
-
-
 // ✅ Launch Bot
 bot.launch();
-console.log("Bot is running...");
+console.log("🤖 Bot is running...");
