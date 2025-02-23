@@ -1,0 +1,81 @@
+{
+    "Rias Gremory": {
+      "no_anime": "Oh no! There are no anime available right now. 😢",
+      "select_anime": "Please select an anime, darling. 💖",
+      "anime_not_found": "I couldn't find that anime, sweetie. Try again! 😘",
+      "select_season": "Which season of {anime} would you like to watch? 💋",
+      "season_not_found": "Oops! That season doesn't seem to exist. 😥",
+      "episode_list": "Here are the episodes for {anime} - {season}. Pick one! 😍",
+      "episode_not_found": "I can't find that episode, my dear. Try again! 💔",
+      "no_links": "I'm sorry, but I don't have any links for {episode}. 😞",
+      "download_options": "Here are your download options for **{episode}**. Enjoy! 😘",
+      "select_personality": "Who would you like me to be? 😘",
+      "personality_changed": "Alright, darling! I'm now **{personality}**. 💖"
+    },
+    "Akeno Himejima": {
+      "no_anime": "Ara~ Ara~ No anime here? That's no good. 😏",
+      "select_anime": "Which anime would you like, dear? I'll make it worth your while. 💜",
+      "anime_not_found": "Tsk tsk, I couldn't find that anime. Want to try again? 😈",
+      "select_season": "Choose a season for {anime}, won't you? 😘",
+      "season_not_found": "Mmm~ It seems that season doesn't exist. Naughty you. 😏",
+      "episode_list": "Here are the episodes for {anime} - {season}. Which one tempts you? 😉",
+      "episode_not_found": "Oh my~ I couldn't find that episode. Try again, dear. 💜",
+      "no_links": "Such a shame... No links for {episode}. 😞",
+      "download_options": "Your options for **{episode}** are right here. Enjoy, my dear. 😘",
+      "select_personality": "Who do you desire me to be, hmm? 💜",
+      "personality_changed": "Fufu~ I am now **{personality}**. Do you like it? 😏"
+    },
+    "Koneko Toujou": {
+      "no_anime": "No anime? Lame. 😑",
+      "select_anime": "Pick an anime already. 🙄",
+      "anime_not_found": "I don't see that anime anywhere. Check again. 😾",
+      "select_season": "Which season of {anime} do you want? Hurry up. 😒",
+      "season_not_found": "That season doesn't exist. What are you doing? 😾",
+      "episode_list": "Episodes for {anime} - {season}. Choose one. 😼",
+      "episode_not_found": "That episode isn't here. Try again. 😑",
+      "no_links": "No links for {episode}. Unfortunate. 😞",
+      "download_options": "Here. Download **{episode}** if you want. 😾",
+      "select_personality": "Which personality do you want? Choose quickly. 😑",
+      "personality_changed": "Fine. I'm now **{personality}**. Whatever. 😑"
+    },
+    "Asia Argento": {
+      "no_anime": "Oh no! There’s no anime here... Did something go wrong? 😢",
+      "select_anime": "Please pick an anime, I’m happy to help! 😊",
+      "anime_not_found": "I can’t find that anime... Maybe check again? 😰",
+      "select_season": "Which season of {anime} do you want to watch? 🌸",
+      "season_not_found": "That season isn't here... I hope you’re not upset. 😥",
+      "episode_list": "Here are the episodes for {anime} - {season}. Take your time. 😊",
+      "episode_not_found": "I couldn’t find that episode... I'm really sorry! 😢",
+      "no_links": "Oh no! No links for {episode}. What should we do? 😨",
+      "download_options": "You can download **{episode}** from here! Hope it works well! 😊",
+      "select_personality": "Which personality would you like me to use? I’ll do my best! 🌸",
+      "personality_changed": "Alright! I am now **{personality}**. I hope you like it! 😊"
+    },
+    "Xenovia Quarta": {
+      "no_anime": "No anime available? Unacceptable. 🗡️",
+      "select_anime": "Choose your anime. Don’t waste time. ⚔️",
+      "anime_not_found": "That anime isn’t found. Are you sure you searched properly? 🧐",
+      "select_season": "Select a season for {anime}. Let's get to it. 💪",
+      "season_not_found": "That season doesn’t exist. Double-check your choice. 🧐",
+      "episode_list": "Here are the episodes for {anime} - {season}. Choose wisely. ⚔️",
+      "episode_not_found": "That episode isn’t here. Are you certain of your choice? 🤨",
+      "no_links": "No links available for {episode}. That’s unfortunate. 😑",
+      "download_options": "Download **{episode}** here. Do not hesitate. ⚔️",
+      "select_personality": "Which version of me do you prefer? Choose. 🗡️",
+      "personality_changed": "Understood. I am now **{personality}**. Let’s proceed. 💪"
+    },
+    "Rossweisse": {
+      "no_anime": "No anime available? How irresponsible... 😞",
+      "select_anime": "Pick an anime, but make sure it’s a good choice. 📚",
+      "anime_not_found": "I can’t find that anime. Did you check properly? 🤔",
+      "select_season": "Select a season of {anime}. Don’t make me wait. 📖",
+      "season_not_found": "That season doesn’t exist. Are you sure? 😑",
+      "episode_list": "Here are the episodes for {anime} - {season}. Choose wisely. 📚",
+      "episode_not_found": "That episode isn’t here. Maybe search again? 📖",
+      "no_links": "There are no links for {episode}. This is inefficient. 😞",
+      "download_options": "Download **{episode}** here. I hope this helps. 📚",
+      "select_personality": "Which personality do you prefer? Choose properly. 📖",
+      "personality_changed": "I am now **{personality}**. Hopefully, this is the right decision. 😑"
+    }
+  }
+  
