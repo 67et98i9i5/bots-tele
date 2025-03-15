@@ -1,0 +1,10 @@
+[2025-03-15T10:20:20.534Z] Idk  (ID: 7020664469) - Started the bot
+[2025-03-15T10:20:32.893Z] Idk  (ID: 7020664469) - Started the bot
+[2025-03-15T10:20:40.834Z] Idk  (ID: 7020664469) - Started the bot
+[2025-03-15T10:21:01.875Z] Idk  (ID: 7020664469) - Started the bot
+[2025-03-15T10:21:11.499Z] Idk  (ID: 7020664469) - Selected Anime: The 100 girlfriends
+[2025-03-15T10:21:12.727Z] Idk  (ID: 7020664469) - Selected Season: Season 1 from The 100 girlfriends
+[2025-03-15T10:21:14.175Z] Idk  (ID: 7020664469) - Selected Episode: Episode 1 from Season 1 of The 100 girlfriends
+[2025-03-15T10:21:15.559Z] Idk  (ID: 7020664469) - Selected Quality: 360p for Episode 1 from Season 1 of The 100 girlfriends
+[2025-03-15T10:21:17.653Z] Idk  (ID: 7020664469) - Selected Quality: 720p for Episode 1 from Season 1 of The 100 girlfriends
+[2025-03-15T10:21:19.411Z] Idk  (ID: 7020664469) - Selected Quality: 1080p for Episode 1 from Season 1 of The 100 girlfriends
