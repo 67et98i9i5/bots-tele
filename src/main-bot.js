@@ -20,8 +20,6 @@ async function loadAnimeData(forceUpdate = false) {
         if (JSON.stringify(newData) !== JSON.stringify(animeDataCache) || forceUpdate) {
             animeDataCache = newData;
             console.log("✅ Anime data updated!");
-        } else {
-            console.log("✔ No new updates.");
         }
     } catch (error) {
         console.error("❌ Error loading anime data:", error);
@@ -164,6 +162,28 @@ bot.action(/quality_(.+)_(.+)_(.+)_(.+)/, (ctx) => {
 bot.action('back_to_anime', (ctx) => {
     logActivity(ctx, "Returned to Anime List");
     sendAnimeList(ctx);
+});
+
+bot.command('api', (ctx) => {
+    ctx.reply('For API click here:',{
+        reply_markup: {
+            inline_keyboard: [[{text: 'CLICK HERE', url: "https://noasaga-api-main.onrender.com"}]]
+        }
+    });
+});
+
+bot.command('about', (ctx) => {
+    ctx.reply(`🚀 *Welcome to Noasaga Project!* 🚀  
+
+        Noasaga is a global anime community created by *Code-67et98i9i5* for anime lovers worldwide! Our goal is to provide a space where anime fans can *discuss, share, and connect* with like-minded people. 🎌✨  
+        
+        🔹 *Join our Telegram community:* [Noasaga Anime](https://t.me/NoasagaAnime)  
+        🔹 *Follow us on Instagram:* [@sakura_dessuu](https://www.instagram.com/sakura_dessuu)  
+        🔹 *Subscribe on YouTube:* [CatWithHat08](https://www.youtube.com/@catwithhat08)  
+        🔹 *Visit our Official Website:* [Noasaga Project](https://noasaga-project.onrender.com)  
+        
+        💖 *Thank you for being part of our anime family!* 💖`, 
+        { parse_mode: 'Markdown', disable_web_page_preview: true });
 });
 
 bot.launch();
