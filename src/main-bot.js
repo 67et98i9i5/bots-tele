@@ -5,7 +5,7 @@ const path = require('path');
 require('dotenv').config();
 const bot = new Telegraf("7846813473:AAGentIPQ68PUJA2sxj99mMsWpA-Oe9j2yc");
 
-const API_URL = "https://noasaga-api-main.onrender.com/anime/data";
+const API_URL = "https://noasaga-api-main-sbmi.onrender.com/anime/data";
 const LOG_FILE = path.join(__dirname, '../logs', 'actions.txt'); 
 
 let animeDataCache = null; 
