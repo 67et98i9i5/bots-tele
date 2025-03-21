@@ -217,9 +217,20 @@ bot.command("api", (ctx) => {
     ctx.reply(`🌐 **Current API Endpoint:**\n\`${API_URL}\``, { parse_mode: "Markdown" });
 });
 
-bot.command("about", (ctx) => {
-    ctx.reply("🤖 **Anime Downloader Bot**\n📌 Powered by Noasaga API\n📅 Version: 1.0.0\n\n💡 Created for fast & easy anime downloads!");
+bot.command('about', (ctx) => {
+    ctx.reply(`🚀 *Welcome to Noasaga Project!* 🚀  
+
+        Noasaga is a global anime community created by *Code-67et98i9i5* for anime lovers worldwide! Our goal is to provide a space where anime fans can *discuss, share, and connect* with like-minded people. 🎌✨  
+        
+        🔹 *Join our Telegram community:* [Noasaga Anime](https://t.me/NoasagaAnime)  
+        🔹 *Follow us on Instagram:* [@sakura_dessuu](https://www.instagram.com/sakura_dessuu)  
+        🔹 *Subscribe on YouTube:* [CatWithHat08](https://www.youtube.com/@catwithhat08)  
+        🔹 *Visit our Official Website:* [Noasaga Project](https://noasaga-project.onrender.com)  
+        
+        💖 *Thank you for being part of our anime family!* 💖`, 
+        { parse_mode: 'Markdown', disable_web_page_preview: true });
 });
+
 
 
 bot.launch();
