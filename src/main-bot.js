@@ -6,51 +6,66 @@ require('dotenv').config();
 const bot = new Telegraf("7846813473:AAGentIPQ68PUJA2sxj99mMsWpA-Oe9j2yc");
 
 const API_URL = "https://noasaga-api-main-sbmi.onrender.com/anime/data";
-const LOG_FILE = path.join(__dirname, '../logs', 'actions.txt'); 
+const LOG_FILE = path.join(__dirname, '../logs', 'actions.txt');
+const DATA_FILE = path.join(__dirname, "../data", "data.json");
 
-let animeDataCache = null; 
+let animeDataCache = null;
+const userSelections = {};
 
-// Function to fetch anime data
+// ✅ Fetch & store anime data every 5-10 minutes
 async function loadAnimeData(forceUpdate = false) {
     try {
         console.log("🔄 Checking for anime data updates...");
+
         const response = await axios.get(API_URL);
         const newData = response.data;
 
         if (JSON.stringify(newData) !== JSON.stringify(animeDataCache) || forceUpdate) {
             animeDataCache = newData;
-            console.log("✅ Anime data updated!");
+            fs.writeFileSync(DATA_FILE, JSON.stringify(newData, null, 2));
+            console.log("✅ Anime data updated and saved to file!");
         }
     } catch (error) {
         console.error("❌ Error loading anime data:", error);
     }
 }
 
-loadAnimeData(true);
-setInterval(loadAnimeData, Math.floor(Math.random() * (60000 - 30000 + 1)) + 30000);
+// ✅ Load anime data from local file first
+function loadLocalAnimeData() {
+    if (fs.existsSync(DATA_FILE)) {
+        animeDataCache = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
+        console.log("✅ Loaded anime data from local file.");
+    } else {
+        console.log("⚠ No local data found, fetching from API...");
+        loadAnimeData(true);
+    }
+}
 
-// Function to log user activity
+// 🔄 Fetch anime data every 5-10 minutes
+loadLocalAnimeData();
+setInterval(() => loadAnimeData(), Math.floor(Math.random() * (600000 - 300000 + 1)) + 300000);
+
+// ✅ Log user activity
 function logActivity(ctx, action) {
     const user = ctx.from;
     const timestamp = new Date().toISOString();
     const logEntry = `[${timestamp}] ${user.first_name} ${user.last_name || ""} (ID: ${user.id}) - ${action}\n`;
 
-    console.log(logEntry.trim()); // Show in console
-
+    console.log(logEntry.trim());
     fs.appendFile(LOG_FILE, logEntry, (err) => {
         if (err) console.error("❌ Error writing log:", err);
     });
 }
 
-// Bot start
+// ✅ Start bot & send anime list
 bot.start((ctx) => {
     logActivity(ctx, "Started the bot");
     if (!animeDataCache) return ctx.reply("❌ Anime data is not loaded yet. Please try again later.");
-    ctx.reply('Welcome! Please select an anime:');
+    ctx.reply('👋 Welcome! Please select an anime:');
     sendAnimeList(ctx);
 });
 
-// Send anime list
+// ✅ Send anime list
 function sendAnimeList(ctx) {
     if (!animeDataCache) return ctx.reply("❌ Anime data is not loaded yet.");
     
@@ -59,15 +74,17 @@ function sendAnimeList(ctx) {
         callback_data: `anime_${anime}`
     }]);
 
-    ctx.reply('Select an anime:', {
+    ctx.reply('📜 Select an anime:', {
         reply_markup: { inline_keyboard: keyboard }
     });
 }
 
-// Handle anime selection
+// ✅ Handle anime selection
 bot.action(/anime_(.+)/, (ctx) => {
     const animeName = ctx.match[1];
     logActivity(ctx, `Selected Anime: ${animeName}`);
+
+    userSelections[ctx.from.id] = { anime: animeName, season: "", episodes: [] };
 
     const animeInfo = animeDataCache[animeName];
     if (!animeInfo) return ctx.reply("❌ Anime not found.");
@@ -79,111 +96,130 @@ bot.action(/anime_(.+)/, (ctx) => {
             callback_data: `season_${animeName}_${season}`
         }]);
 
-    keyboard.push([{ text: '⬅ Back', callback_data: 'back_to_anime' }]);
-
-    ctx.editMessageText(`Select a season from ${animeName}:`, {
+    ctx.editMessageText(`📌 Select a season from **${animeName}**:`, {
         reply_markup: { inline_keyboard: keyboard }
-    }).catch(() => ctx.reply(`Select a season from ${animeName}:`, {
-        reply_markup: { inline_keyboard: keyboard }
-    }));
+    });
 });
 
-// Handle season selection
+// ✅ Handle season selection
 bot.action(/season_(.+)_(.+)/, (ctx) => {
     const [animeName, seasonName] = ctx.match.slice(1);
     logActivity(ctx, `Selected Season: ${seasonName} from ${animeName}`);
 
-    const seasonData = animeDataCache[animeName]?.[seasonName];
-    if (!seasonData || !seasonData.episodes) return ctx.reply("❌ No episodes available for this season.");
+    userSelections[ctx.from.id].season = seasonName;
+    userSelections[ctx.from.id].episodes = [];
 
-    const keyboard = Object.keys(seasonData.episodes).map(ep => [{
-        text: ep,
-        callback_data: `episode_${animeName}_${seasonName}_${ep}`
-    }]);
-
-    keyboard.push([{ text: '⬅ Back', callback_data: `anime_${animeName}` }]);
-
-    ctx.editMessageText(`Select an episode from ${seasonName}:`, {
-        reply_markup: { inline_keyboard: keyboard }
-    }).catch(() => ctx.reply(`Select an episode from ${seasonName}:`, {
-        reply_markup: { inline_keyboard: keyboard }
-    }));
+    sendEpisodeSelection(ctx, animeName, seasonName);
 });
 
-// Handle episode selection
-bot.action(/episode_(.+)_(.+)_(.+)/, (ctx) => {
+// ✅ Send episodes with toggle selection
+function sendEpisodeSelection(ctx, animeName, seasonName) {
+    const { episodes } = userSelections[ctx.from.id];
+
+    const keyboard = Object.keys(animeDataCache[animeName][seasonName].episodes).map(ep => [{
+        text: `${episodes.includes(ep) ? "✅" : "❌"} ${ep}`,
+        callback_data: `toggle_episode_${animeName}_${seasonName}_${ep}`
+    }]);
+
+    keyboard.push([{ text: "✔ Confirm Selection", callback_data: "confirm_multi_selection" }]);
+
+    ctx.editMessageText(`📺 Select episodes from **${seasonName}**:`, {
+        reply_markup: { inline_keyboard: keyboard }
+    });
+}
+
+// ✅ Handle episode toggle
+bot.action(/toggle_episode_(.+)_(.+)_(.+)/, (ctx) => {
     const [animeName, seasonName, episodeName] = ctx.match.slice(1);
-    logActivity(ctx, `Selected Episode: ${episodeName} from ${seasonName} of ${animeName}`);
+    let { episodes } = userSelections[ctx.from.id];
 
-    const episodeData = animeDataCache[animeName]?.[seasonName]?.episodes?.[episodeName];
-    if (!episodeData || !episodeData.qualities) return ctx.reply("❌ No available qualities for this episode.");
-
-    const keyboard = Object.keys(episodeData.qualities).map(q => [{
-        text: q,
-        callback_data: `quality_${animeName}_${seasonName}_${episodeName}_${q}`
-    }]);
-    keyboard.push([{ text: '⬅ Back', callback_data: `season_${animeName}_${seasonName}` }]);
-
-    ctx.editMessageText(`Select quality for ${episodeName}:`, {
-        reply_markup: { inline_keyboard: keyboard }
-    }).catch(() => ctx.reply(`Select quality for ${episodeName}:`, {
-        reply_markup: { inline_keyboard: keyboard }
-    }));
-});
-
-// Handle quality selection
-bot.action(/quality_(.+)_(.+)_(.+)_(.+)/, (ctx) => {
-    const [animeName, seasonName, episodeName, quality] = ctx.match.slice(1);
-    logActivity(ctx, `Selected Quality: ${quality} for ${episodeName} from ${seasonName} of ${animeName}`);
-
-    const fileData = animeDataCache[animeName]?.[seasonName]?.episodes?.[episodeName]?.qualities?.[quality];
-
-    if (!fileData || (fileData.file_id === "" && fileData.file_url === "N/A")) {
-        return ctx.reply("❌ This episode is unavailable for the selected quality. Please try another quality.");
+    if (episodes.includes(episodeName)) {
+        episodes = episodes.filter(ep => ep !== episodeName);
+    } else {
+        episodes.push(episodeName);
     }
 
-    ctx.reply(`Anime: ${animeName}\nSeason: ${seasonName}\nEpisode: ${episodeName}\nQuality: ${quality}\nFile Size: ${fileData.file_size}`)
-        .then(() => {
-            if (fileData.file_id) {
-                ctx.replyWithVideo(fileData.file_id);
-            } else if (fileData.file_url && fileData.file_url !== "N/A") {
-                ctx.reply('Download the file:', {
-                    reply_markup: {
-                        inline_keyboard: [[{ text: '📥 Download', url: fileData.file_url }]]
-                    }
-                });
-            } else {
-                ctx.reply("❌ No valid file source available.");
-            }
-        });
+    userSelections[ctx.from.id].episodes = episodes;
+    sendEpisodeSelection(ctx, animeName, seasonName);
 });
 
-// Back to anime list
-bot.action('back_to_anime', (ctx) => {
-    logActivity(ctx, "Returned to Anime List");
-    sendAnimeList(ctx);
-});
+// ✅ Confirm episode selection and ask for quality
+bot.action("confirm_multi_selection", (ctx) => {
+    const { anime, season, episodes } = userSelections[ctx.from.id];
 
-bot.command('api', (ctx) => {
-    ctx.reply('For API click here:',{
-        reply_markup: {
-            inline_keyboard: [[{text: 'CLICK HERE', url: "https://noasaga-api-main.onrender.com"}]]
-        }
+    if (!episodes.length) return ctx.reply("❌ Please select at least one episode.");
+
+    logActivity(ctx, `Confirmed Multi Episodes: ${episodes.join(", ")}`);
+    
+    const firstEpisodeData = animeDataCache[anime][season].episodes[episodes[0]];
+    if (!firstEpisodeData || !firstEpisodeData.qualities) {
+        return ctx.reply("❌ No available qualities for the selected episodes.");
+    }
+
+    const keyboard = Object.keys(firstEpisodeData.qualities).map(q => [{
+        text: q,
+        callback_data: `multi_quality_${anime}_${season}_${q}`
+    }]);
+
+    ctx.reply("🎥 Select a quality for all selected episodes:", {
+        reply_markup: { inline_keyboard: keyboard }
     });
 });
 
-bot.command('about', (ctx) => {
-    ctx.reply(`🚀 *Welcome to Noasaga Project!* 🚀  
+// ✅ Send episodes with details & delete previous messages
+bot.action(/multi_quality_(.+)_(.+)_(.+)/, async (ctx) => {
+    const [animeName, seasonName, quality] = ctx.match.slice(1);
+    logActivity(ctx, `Selected Multi Quality: ${quality}`);
+    ctx.reply("Please wait...");
 
-        Noasaga is a global anime community created by *Code-67et98i9i5* for anime lovers worldwide! Our goal is to provide a space where anime fans can *discuss, share, and connect* with like-minded people. 🎌✨  
-        
-        🔹 *Join our Telegram community:* [Noasaga Anime](https://t.me/NoasagaAnime)  
-        🔹 *Follow us on Instagram:* [@sakura_dessuu](https://www.instagram.com/sakura_dessuu)  
-        🔹 *Subscribe on YouTube:* [CatWithHat08](https://www.youtube.com/@catwithhat08)  
-        🔹 *Visit our Official Website:* [Noasaga Project](https://noasaga-project.onrender.com)  
-        
-        💖 *Thank you for being part of our anime family!* 💖`, 
-        { parse_mode: 'Markdown', disable_web_page_preview: true });
+    const userData = userSelections[ctx.from.id] || { episodes: [] };
+    const episodes = userData.episodes || [];
+
+    if (!episodes.length) return ctx.reply("❌ No episodes selected.");
+
+    await ctx.reply(`📥 ${episodes.length} episodes in **${quality}** quality...`);
+
+    for (const ep of episodes) {
+        const fileData = animeDataCache[animeName]?.[seasonName]?.episodes?.[ep]?.qualities?.[quality];
+
+        if (!fileData || (fileData.file_id === "" && fileData.file_url === "N/A")) {
+            await ctx.reply(`❌ Episode ${ep} is unavailable in ${quality}.`);
+        } else {
+            const fileSize = fileData.file_size || "Unknown Size";
+            const infoText = `📺 **Episode ${ep}**\n📂 **Size:** ${fileSize}\n🎞 **Quality:** ${quality}`;
+            
+            if (fileData.file_id) {
+                await ctx.replyWithVideo(fileData.file_id, { caption: infoText, parse_mode: "Markdown" });
+            } else {
+                await ctx.reply(`${infoText}\n\n📥 **Download Link:**`, {
+                    reply_markup: { inline_keyboard: [[{ text: "Download", url: fileData.file_url }]] }
+                });
+            }
+        }
+    }
+
+    await ctx.reply("❓ Do you want to continue using the bot?", {
+        reply_markup: { inline_keyboard: [[{ text: "🔄 Yes, Continue", callback_data: "continue_bot" }]] }
+    });
+    
+    // Reset user selection after processing
+    userSelections[ctx.from.id] = { episodes: [] };
+    
 });
+
+bot.action("continue_bot", (ctx) => {
+    logActivity(ctx, "User chose to continue the bot");
+    sendAnimeList(ctx);
+});
+
+
+bot.command("api", (ctx) => {
+    ctx.reply(`🌐 **Current API Endpoint:**\n\`${API_URL}\``, { parse_mode: "Markdown" });
+});
+
+bot.command("about", (ctx) => {
+    ctx.reply("🤖 **Anime Downloader Bot**\n📌 Powered by Noasaga API\n📅 Version: 1.0.0\n\n💡 Created for fast & easy anime downloads!");
+});
+
 
 bot.launch();
