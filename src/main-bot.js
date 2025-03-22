@@ -21,7 +21,7 @@ async function loadAnimeData(forceUpdate = false) {
         const newData = response.data;
 
         if (JSON.stringify(newData) !== JSON.stringify(animeDataCache) || forceUpdate) {
-            animeDataCache = newData;
+            animeDataCache = newData.anime_list;  // Access anime_list from the new structure
             fs.writeFileSync(DATA_FILE, JSON.stringify(newData, null, 2));
             console.log("✅ Anime data updated and saved to file!");
         }
@@ -33,7 +33,7 @@ async function loadAnimeData(forceUpdate = false) {
 // ✅ Load anime data from local file first
 function loadLocalAnimeData() {
     if (fs.existsSync(DATA_FILE)) {
-        animeDataCache = JSON.parse(fs.readFileSync(DATA_FILE, "utf8"));
+        animeDataCache = JSON.parse(fs.readFileSync(DATA_FILE, "utf8")).anime_list;  // Access anime_list from the local file
         console.log("✅ Loaded anime data from local file.");
     } else {
         console.log("⚠ No local data found, fetching from API...");
@@ -115,12 +115,14 @@ bot.start((ctx) => {
         });
     }
 });
+
+
 // 📜 Improved Anime List Display
 function sendAnimeList(ctx) {
     if (!animeDataCache) return ctx.reply("❌ *Anime data is still loading...*", { parse_mode: "Markdown" });
 
     const keyboard = Object.keys(animeDataCache).map(anime => [{
-        text: `🎥 ${anime}`,
+        text: `${anime}`,
         callback_data: `anime_${anime}`
     }]);
 
