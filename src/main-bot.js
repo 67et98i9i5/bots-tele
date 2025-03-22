@@ -264,6 +264,9 @@ bot.action("continue_bot", (ctx) => {
     sendAnimeList(ctx);
 });
 
+bot.action("browse_anime", (ctx) => {
+    sendAnimeList(ctx);
+});
 
 bot.command("api", (ctx) => {
     ctx.reply(`🌐 **Current API Endpoint:**\n\`${API_URL}\``, { parse_mode: "Markdown" });
