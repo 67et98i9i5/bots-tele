@@ -33,7 +33,7 @@ bot.start((ctx) => {
 
 bot.action('add_anime', (ctx) => {
     userState[ctx.from.id] = { step: 'anime_name' };
-    ctx.reply('Enter the anime name:');
+    ctx.editMessageText('Enter the anime name:');
 });
 
 
@@ -114,20 +114,20 @@ bot.on('text', async (ctx) => {
     }
 });
 
+// 🔹 Edit Anime Start
 bot.action('edit_anime', async (ctx) => {
     const data = loadData();
     const animeList = Object.keys(data.anime_list);
 
     if (animeList.length === 0) return ctx.reply("❌ No anime available to edit.");
 
-    await ctx.reply(
+    await ctx.editMessageText(
         "Select an anime to edit:",
         Markup.inlineKeyboard(
             animeList.map(name => [Markup.button.callback(name, `anime_${encodeURIComponent(name)}`)])
         )
     );
 });
-
 
 // 🔹 Select Anime
 bot.action(/^anime_(.+)$/, async (ctx) => {
@@ -166,62 +166,26 @@ bot.action(/^season_(.+)_(.+)$/, async (ctx) => {
     );
 });
 
+// 🔹 Select Episode & Prompt for Files
 bot.action(/^episode_(.+)_(.+)_(.+)$/, async (ctx) => {
     const animeName = decodeURIComponent(ctx.match[1]);
     const seasonName = ctx.match[2];
     const episodeName = ctx.match[3];
 
-    await ctx.reply(
-        `📌 Selected: *${animeName}* > *${seasonName}* > *${episodeName}*\n\nChoose quality:`,
-        Markup.inlineKeyboard([
-            [Markup.button.callback('360p', `quality_${encodeURIComponent(animeName)}_${seasonName}_${episodeName}_360p`)],
-            [Markup.button.callback('720p', `quality_${encodeURIComponent(animeName)}_${seasonName}_${episodeName}_720p`)],
-            [Markup.button.callback('1080p', `quality_${encodeURIComponent(animeName)}_${seasonName}_${episodeName}_1080p`)]
-        ])
-    );
-});
-
-// 🔹 Select Quality
-bot.action(/^quality_(.+)_(.+)_(.+)_(.+)$/, async (ctx) => {
-    const animeName = decodeURIComponent(ctx.match[1]);
-    const seasonName = ctx.match[2];
-    const episodeName = ctx.match[3];
-    const quality = ctx.match[4];
-
     userState[ctx.from.id] = {
-        step: 'waiting_for_file_or_url',
         animeName,
         seasonName,
         episodeName,
-        quality
+        step: 'waiting_for_file'
     };
 
-    await ctx.editMessageText(
-        `📌 Selected: *${animeName}* > *${seasonName}* > *${episodeName}* > *${quality}*\n\nChoose how to upload:`,
-        Markup.inlineKeyboard([
-            [Markup.button.callback('📂 Upload File', 'upload_file')],
-            [Markup.button.callback('🔗 Upload URL', 'upload_url')]
-        ])
+    await ctx.reply(
+        `📌 Selected: *${animeName}* > *${seasonName}* > *${episodeName}*\n\n📂 Please send up to *3 files* (one for each quality: 360p, 720p, 1080p).`
     );
 });
 
-
-bot.action('upload_file', async (ctx) => {
-    const userId = ctx.from.id;
-    const state = userState[userId];
-
-    if (!state) return ctx.reply("❌ Something went wrong. Please restart.");
-
-    state.step = 'waiting_for_file';  // ✅ Fix: Ensure correct state transition
-    ctx.reply("📂 Please send the file now (forwarded from a private channel).");
-});
-
-
-// 🔹 Handle URL Upload Request
-bot.action('upload_url', async (ctx) => {
-    ctx.reply("🔗 Please send the URL now.");
-    userState[ctx.from.id] = { step: 'waiting_for_url' };
-});
+// 🔹 Reset state on bot restart
+const fileQueue = {};  // Resets on every restart
 
 bot.on('video', async (ctx) => {
     const userId = ctx.from.id;
@@ -233,14 +197,33 @@ bot.on('video', async (ctx) => {
     if (!file) return ctx.reply("❌ No file detected. Please send a valid video file.");
 
     const data = loadData();
+    const episodeData = data.anime_list[state.animeName][state.seasonName].episodes[state.episodeName];
 
-    // Update episode quality details with file data
-    data.anime_list[state.animeName][state.seasonName].episodes[state.episodeName].qualities[state.quality] = {
-        file_url: "n/a",  // Since it's a file, URL is not needed
+    // 🔹 Ensure 'qualities' object exists
+    if (!episodeData.qualities) episodeData.qualities = { '360p': {}, '720p': {}, '1080p': {} };
+
+    // 🔹 Reset file queue for the current episode on bot restart
+    if (!fileQueue[state.animeName]) fileQueue[state.animeName] = {};
+    if (!fileQueue[state.animeName][state.seasonName]) fileQueue[state.animeName][state.seasonName] = {};
+    if (!fileQueue[state.animeName][state.seasonName][state.episodeName]) {
+        fileQueue[state.animeName][state.seasonName][state.episodeName] = [];
+    }
+
+    const qualityOrder = ['360p', '720p', '1080p'];
+    const currentQueue = fileQueue[state.animeName][state.seasonName][state.episodeName];
+
+    // 🔹 Assign the file to the next quality slot or overwrite the oldest one
+    let targetQuality = qualityOrder[currentQueue.length % 3];
+
+    episodeData.qualities[targetQuality] = {
+        file_url: "n/a",
         file_id: file.file_id,
         file_unique_id: file.file_unique_id,
         file_size: `${(file.file_size / (1024 * 1024)).toFixed(2)} MB`
     };
+
+    // 🔹 Add file to tracking queue
+    currentQueue.push(file.file_id);
 
     saveData(data);
 
@@ -249,32 +232,12 @@ bot.on('video', async (ctx) => {
         `📌 *Anime:* ${state.animeName}\n` +
         `📌 *Season:* ${state.seasonName}\n` +
         `📌 *Episode:* ${state.episodeName}\n` +
-        `📌 *Quality:* ${state.quality}\n\n` +
+        `📌 *Quality:* ${targetQuality} (Updated)\n\n` +
         `📂 *File ID:* \`${file.file_id}\`\n` +
         `🔑 *Unique File ID:* \`${file.file_unique_id}\`\n` +
         `📏 *File Size:* ${((file.file_size) / (1024 * 1024)).toFixed(2)} MB`
     );
 });
 
-
-bot.on('text', async (ctx) => {
-    const userId = ctx.from.id;
-    const state = userState[userId];
-
-    if (!state || state.step !== 'waiting_for_file_or_url') return;
-
-    const fileUrl = ctx.message.text.trim();
-    if (!fileUrl.startsWith('http')) return ctx.reply("❌ Invalid URL! Please send a valid link.");
-
-    const data = loadData();
-    data.anime_list[state.animeName][state.seasonName].episodes[state.episodeName].qualities[state.quality] = {
-        file_url: fileUrl,
-        file_id: "",
-        file_unique_id: "",
-        file_size: "N/A"
-    };
-    saveData(data);
-});
-
-
+// Start the bot
 bot.launch();
