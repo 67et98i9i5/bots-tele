@@ -3,7 +3,7 @@ const axios = require('axios');
 const fs = require('fs'); 
 const path = require('path'); 
 require('dotenv').config();
-const bot = new Telegraf("7846813473:AAGentIPQ68PUJA2sxj99mMsWpA-Oe9j2yc");
+const bot = new Telegraf("7846813473:AAF77LtoEGmiBiok85Q7oO00yWFvCog8llU");
 
 const API_URL = "https://noasaga-api-main-sbmi.onrender.com/anime/data";
 const LOG_FILE = path.join(__dirname, '../logs', 'actions.txt');
