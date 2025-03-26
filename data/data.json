@@ -933,6 +933,302 @@
         }
       }
     },
+    "Devil may cry": {
+        "anime_id": "67912",
+            "Season 1": {
+                "season_id": "s1",
+                "episodes": {
+                    "Episode 1": {
+                        "ep_name": "Episode 1",
+                        "ep_number": "1",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMCZ-PqvyrYgnUUGiK816oH7dDlOM0AAmIaAAKRJRlXEjV9OfsDLRE2BA",
+                                "file_unique_id": "AgADYhoAApElGVc",
+                                "file_size": "34.93 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMDZ-Pq0r1-qmpBkob62lRP25xJUOUAAmMaAAKRJRlXMYFmsqzXQPI2BA",
+                                "file_unique_id": "AgADYxoAApElGVc",
+                                "file_size": "88.17 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMEZ-Pq8FMve8fyWxjRwXqe3ZQtts8AAmQaAAKRJRlXhQGTFND6hTA2BA",
+                                "file_unique_id": "AgADZBoAApElGVc",
+                                "file_size": "144.26 MB"
+                            }
+                        }
+                    },
+                    "Episode 2": {
+                        "ep_name": "Episode 2",
+                        "ep_number": "2",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMFZ-Pq-U9WrebiniDP3a39oZmAXPsAAmUaAAKRJRlXx4Jomearu_I2BA",
+                                "file_unique_id": "AgADZRoAApElGVc",
+                                "file_size": "41.30 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMGZ-PrEKBwfUBN_mdj77_QBPsSAm4AAmYaAAKRJRlXnA3W7rseu102BA",
+                                "file_unique_id": "AgADZhoAApElGVc",
+                                "file_size": "107.20 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMHZ-PrOOtdQ5J17pweThAfWRwqci0AAmcaAAKRJRlXS-4c65txk0A2BA",
+                                "file_unique_id": "AgADZxoAApElGVc",
+                                "file_size": "182.54 MB"
+                            }
+                        }
+                    },
+                    "Episode 3": {
+                        "ep_name": "Episode 3",
+                        "ep_number": "3",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMIZ-PrPtFLnzGe-8BRR51qpnJrxZAAAmgaAAKRJRlXuWKlw7TK3-E2BA",
+                                "file_unique_id": "AgADaBoAApElGVc",
+                                "file_size": "32.82 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMJZ-PrUevEThjBrKsiWbq_dxvRr4EAAmkaAAKRJRlX1LOB1RXkF5g2BA",
+                                "file_unique_id": "AgADaRoAApElGVc",
+                                "file_size": "83.41 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMKZ-PrbVt0iRB3QXxZi0Xk2LDFscsAAmoaAAKRJRlXY-5d5P2IRCs2BA",
+                                "file_unique_id": "AgADahoAApElGVc",
+                                "file_size": "135.08 MB"
+                            }
+                        }
+                    },
+                    "Episode 4": {
+                        "ep_name": "Episode 4",
+                        "ep_number": "4",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMLZ-PrdlrG-w3YNXiC5TJiAxop9vIAAmwaAAKRJRlX6D5sSq41izc2BA",
+                                "file_unique_id": "AgADbBoAApElGVc",
+                                "file_size": "40.12 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMMZ-Prj4-at_r67T6SWuBPsoPb6pIAAm4aAAKRJRlXI6_d_Ffrcd82BA",
+                                "file_unique_id": "AgADbhoAApElGVc",
+                                "file_size": "104.86 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMNZ-PrtBlDw8o39tJXP2E0lL2F6CQAAm8aAAKRJRlXHdnRMUiHsTs2BA",
+                                "file_unique_id": "AgADbxoAApElGVc",
+                                "file_size": "170.11 MB"
+                            }
+                        }
+                    },
+                    "Episode 5": {
+                        "ep_name": "Episode 5",
+                        "ep_number": "5",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMOZ-Pru7-Wcfhb46wUh-leElFQX-oAAnAaAAKRJRlX_AJEGpQ90NA2BA",
+                                "file_unique_id": "AgADcBoAApElGVc",
+                                "file_size": "36.48 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMPZ-PrzqNCHVYwcvvFs5_66RQhHKMAAnEaAAKRJRlXQNPLovXeBEI2BA",
+                                "file_unique_id": "AgADcRoAApElGVc",
+                                "file_size": "90.11 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMQZ-Pr7mPbNjbLfOsCla1AUBE7CBsAAnIaAAKRJRlXWy9jL7yxNtU2BA",
+                                "file_unique_id": "AgADchoAApElGVc",
+                                "file_size": "147.56 MB"
+                            }
+                        }
+                    },
+                    "Episode 6": {
+                        "ep_name": "Episode 6",
+                        "ep_number": "6",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMRZ-Pr9mfSuKOGbqHz19bA3wthLcYAAnMaAAKRJRlXeVwjt_Ezods2BA",
+                                "file_unique_id": "AgADcxoAApElGVc",
+                                "file_size": "42.28 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMSZ-PsDr_Ha31df8Ho3IEaWKFOg_0AAnQaAAKRJRlXUxRmbVxVlX02BA",
+                                "file_unique_id": "AgADdBoAApElGVc",
+                                "file_size": "110.70 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMTZ-PsNhtEGyX0vQABe6i8qTqhVfu0AAJ1GgACkSUZVyE_7GmgF52TNgQ",
+                                "file_unique_id": "AgADdRoAApElGVc",
+                                "file_size": "186.24 MB"
+                            }
+                        }
+                    },
+                    "Episode 7": {
+                        "ep_name": "Episode 7",
+                        "ep_number": "7",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMUZ-PsPkATL3mO5vbOY4rcKxc4jc4AAnYaAAKRJRlXPZ4nCinEfsE2BA",
+                                "file_unique_id": "AgADdhoAApElGVc",
+                                "file_size": "38.25 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMVZ-PsUx7vfCAJ4bxqf-itTNBHUO8AAngaAAKRJRlX2aiHvavsq-c2BA",
+                                "file_unique_id": "AgADeBoAApElGVc",
+                                "file_size": "97.36 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMWZ-PsduJ0iyiJ1Ad2xGKhqJ04hAsAAnoaAAKRJRlXdhif7VqCBjY2BA",
+                                "file_unique_id": "AgADehoAApElGVc",
+                                "file_size": "160.51 MB"
+                            }
+                        }
+                    },
+                    "Episode 8": {
+                        "ep_name": "Episode 8",
+                        "ep_number": "8",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMXZ-PsfkGEnEaG_OLpcnZri4PPgEgAAnsaAAKRJRlXd4WzpRa7Fp42BA",
+                                "file_unique_id": "AgADexoAApElGVc",
+                                "file_size": "38.36 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMYZ-PskwY8nUqW9Cs1c0eE6kBMeMsAAn0aAAKRJRlXiuZg6dopZDQ2BA",
+                                "file_unique_id": "AgADfRoAApElGVc",
+                                "file_size": "104.96 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMZZ-PsuIRU8ycvFmIAAR--DqQanQ02AAKBGgACkSUZV0QLkrJjSZVcNgQ",
+                                "file_unique_id": "AgADgRoAApElGVc",
+                                "file_size": "168.19 MB"
+                            }
+                        }
+                    },
+                    "Episode 9": {
+                        "ep_name": "Episode 9",
+                        "ep_number": "9",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMaZ-PswFr1-GCQFOaVZNo-dZlJVqwAAoIaAAKRJRlXuznZgLPPaS02BA",
+                                "file_unique_id": "AgADghoAApElGVc",
+                                "file_size": "37.71 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMbZ-Ps1ucmFBpZ7nSpvDsEZVEF8UcAAoMaAAKRJRlXS3hHysNwOn42BA",
+                                "file_unique_id": "AgADgxoAApElGVc",
+                                "file_size": "94.83 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMcZ-Ps9bjMej6jAgbA9rmZmfCCNosAAoUaAAKRJRlX9KfFuf9b45U2BA",
+                                "file_unique_id": "AgADhRoAApElGVc",
+                                "file_size": "152.18 MB"
+                            }
+                        }
+                    },
+                    "Episode 10": {
+                        "ep_name": "Episode 10",
+                        "ep_number": "10",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMdZ-Ps_LXRwW-bueUf6ezkXrWVwr0AAoYaAAKRJRlXpwj3sA4JMak2BA",
+                                "file_unique_id": "AgADhhoAApElGVc",
+                                "file_size": "38.29 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMeZ-PtE1n9j76H8xUOpZVUkRN1luIAAocaAAKRJRlXZoDhRgx8E6k2BA",
+                                "file_unique_id": "AgADhxoAApElGVc",
+                                "file_size": "101.97 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMfZ-PtP6F4gWOdCXqGz4NOg3l8dC0AAokaAAKRJRlXCM-Yi20qG842BA",
+                                "file_unique_id": "AgADiRoAApElGVc",
+                                "file_size": "171.04 MB"
+                            }
+                        }
+                    },
+                    "Episode 11": {
+                        "ep_name": "Episode 11",
+                        "ep_number": "11",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMgZ-PtRy9hBqr3DgAB-jPihlrZ2MMpAAKKGgACkSUZV-PSTiUCKf2BNgQ",
+                                "file_unique_id": "AgADihoAApElGVc",
+                                "file_size": "35.29 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMhZ-PtXO-GIAtl8okx6qm_qC-rj98AAosaAAKRJRlXiJOvYTRbAUo2BA",
+                                "file_unique_id": "AgADixoAApElGVc",
+                                "file_size": "87.15 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMiZ-PtpbdDIzGrKVwAAR8bUgRI8mQbAAKMGgACkSUZV8aKFWZtLgRhNgQ",
+                                "file_unique_id": "AgADjBoAApElGVc",
+                                "file_size": "142.82 MB"
+                            }
+                        }
+                    },
+                    "Episode 12": {
+                        "ep_name": "Episode 12",
+                        "ep_number": "12",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMjZ-Ptwn78I_3SU0VQFAPfb2rdrscAAo4aAAKRJRlXdiiog4UKwnU2BA",
+                                "file_unique_id": "AgADjhoAApElGVc",
+                                "file_size": "46.39 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMkZ-Pt-VaRCOI9BqWnrwq_3X7v720AApAaAAKRJRlXNl6Nabqmj-w2BA",
+                                "file_unique_id": "AgADkBoAApElGVc",
+                                "file_size": "127.57 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASZf4O3AAMlZ-PuVqp8kebMkRghFprmcMMvS7AAApEaAAKRJRlXDaMnhwjRtzQ2BA",
+                                "file_unique_id": "AgADkRoAApElGVc",
+                                "file_size": "198.43 MB"
+                            }
+                        }
+                    }
+                }
+            }
+    },
     "Kaiju no. 8": {
       "anime_id": "67910",
       "Season 1": {
