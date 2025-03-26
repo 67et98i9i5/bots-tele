@@ -8,6 +8,8 @@ const bot = new Telegraf("7846813473:AAF77LtoEGmiBiok85Q7oO00yWFvCog8llU");
 const LOG_FILE = path.join(__dirname, '../logs', 'actions.txt');
 const DATA_FILE = path.join(__dirname, "../data", "data.json");
 const userSelections = {};
+const userPageData = {}; // Store current page per user
+
 
 // ✅ Load anime data from local file first
 function loadLocalAnimeData() {
@@ -90,20 +92,37 @@ bot.start((ctx) => {
 });
 
 
-// 📜 Improved Anime List Display
-function sendAnimeList(ctx) {
-    if (!animeDataCache) return ctx.reply("❌ *Anime data is still loading...*", { parse_mode: "Markdown" });
+function sendAnimeList(ctx, page = 1) {
+    const userId = ctx.from.id;
+    const animeKeys = Object.keys(animeDataCache);
+    const pageSize = 10; // Show 10 anime per page
+    const totalPages = Math.ceil(animeKeys.length / pageSize);
 
-    const keyboard = Object.keys(animeDataCache).map(anime => [{
-        text: `${anime}`,
+    userPageData[userId] = page; // Store user's page
+
+    // Get anime for this page
+    const startIdx = (page - 1) * pageSize;
+    const endIdx = startIdx + pageSize;
+    const paginatedAnime = animeKeys.slice(startIdx, endIdx);
+
+    // Create buttons
+    const keyboard = paginatedAnime.map(anime => [{
+        text: anime,
         callback_data: `anime_${anime}`
     }]);
 
-    ctx.reply("📜 *Choose an anime:*", {
+    // Add pagination controls
+    const navButtons = [];
+    if (page > 1) navButtons.push({ text: "⬅ Back", callback_data: `page_${page - 1}` });
+    if (page < totalPages) navButtons.push({ text: "Next ➡", callback_data: `page_${page + 1}` });
+    if (navButtons.length) keyboard.push(navButtons);
+
+    ctx.editMessageText(`📜 *Choose an anime (Page ${page}/${totalPages}):*`, {
         reply_markup: { inline_keyboard: keyboard },
         parse_mode: "Markdown"
     });
 }
+
 
 // ✅ Handle anime selection
 bot.action(/anime_(.+)/, (ctx) => {
@@ -240,8 +259,9 @@ bot.action("continue_bot", (ctx) => {
 });
 
 bot.action("browse_anime", (ctx) => {
-    sendAnimeList(ctx);
+    sendAnimeList(ctx, 1);
 });
+
 
 // ℹ Updated "About" Command
 bot.command('about', (ctx) => {
