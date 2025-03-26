@@ -5,30 +5,9 @@ const path = require('path');
 require('dotenv').config();
 const bot = new Telegraf("7846813473:AAF77LtoEGmiBiok85Q7oO00yWFvCog8llU");
 
-const API_URL = "https://noasaga-api-main-sbmi.onrender.com/anime/data";
 const LOG_FILE = path.join(__dirname, '../logs', 'actions.txt');
 const DATA_FILE = path.join(__dirname, "../data", "data.json");
-
-let animeDataCache = null;
 const userSelections = {};
-
-// ✅ Fetch & store anime data every 5-10 minutes
-async function loadAnimeData(forceUpdate = false) {
-    try {
-        console.log("🔄 Checking for anime data updates...");
-
-        const response = await axios.get(API_URL);
-        const newData = response.data;
-
-        if (JSON.stringify(newData) !== JSON.stringify(animeDataCache) || forceUpdate) {
-            animeDataCache = newData.anime_list;  // Access anime_list from the new structure
-            fs.writeFileSync(DATA_FILE, JSON.stringify(newData, null, 2));
-            console.log("✅ Anime data updated and saved to file!");
-        }
-    } catch (error) {
-        console.error("❌ Error loading anime data:", error);
-    }
-}
 
 // ✅ Load anime data from local file first
 function loadLocalAnimeData() {
@@ -43,7 +22,6 @@ function loadLocalAnimeData() {
 
 // 🔄 Fetch anime data every 5-10 minutes
 loadLocalAnimeData();
-setInterval(() => loadAnimeData(), Math.floor(Math.random() * (600000 - 300000 + 1)) + 300000);
 
 // ✅ Log user activity
 function logActivity(ctx, action) {
@@ -80,11 +58,6 @@ function getFileIdFromParams(animeId, seasonId, episodeId, quality) {
 
 bot.start((ctx) => {
     logActivity(ctx, "Started the bot");
-
-    if (!animeDataCache) {
-        ctx.reply("❌ *Anime data is still loading...*\nPlease try again in a few moments.", { parse_mode: "Markdown" });
-        return;
-    }
 
     const startPayload = ctx.startPayload;
     logActivity(ctx, `Raw startPayload: ${startPayload}`);
@@ -270,10 +243,6 @@ bot.action("browse_anime", (ctx) => {
     sendAnimeList(ctx);
 });
 
-bot.command("api", (ctx) => {
-    ctx.reply(`🌐 **Current API Endpoint:**\n\`${API_URL}\``, { parse_mode: "Markdown" });
-});
-
 // ℹ Updated "About" Command
 bot.command('about', (ctx) => {
     ctx.reply(`
@@ -289,4 +258,5 @@ bot.command('about', (ctx) => {
 🎭 *Enjoy streaming & downloading anime hassle-free!*
 `, { parse_mode: 'Markdown', disable_web_page_preview: true });
 });
+
 bot.launch();
