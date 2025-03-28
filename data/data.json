@@ -4518,8 +4518,32 @@
                       "file_size": "178.03 MB"
                   }
               }
+          },
+          "Episode 12": {
+            "ep_name": "Episode 12",
+            "ep_number": "12",
+            "qualities": {
+                  "360p": {
+                      "file_url": "n/a",
+                      "file_id": "BAACAgUAAyEFAASWM1X8AAMCZ-bWcBqsrYl1SSI1ttJgCDtnbBoAAuoXAALSDThX_unzi_JdHTQ2BA",
+                      "file_unique_id": "AgAD6hcAAtINOFc",
+                      "file_size": "33.95 MB"
+                      },
+                      "720p": {
+                          "file_url": "n/a",
+                          "file_id": "BAACAgUAAyEFAASWM1X8AAMDZ-bWinf6_pPTQpgG5D02V8fh27kAAusXAALSDThXuj04YdR51UU2BA",
+                          "file_unique_id": "AgAD6xcAAtINOFc",
+                          "file_size": "119.06 MB"
+                      },
+                      "1080p": {
+                          "file_url": "n/a",
+                          "file_id": "BAACAgUAAyEFAASWM1X8AAMEZ-bWsoCEKOHZLn1KxRWR1SX_0IwAAuwXAALSDThXRyEx89LKrU82BA",
+                          "file_unique_id": "AgAD7BcAAtINOFc",
+                          "file_size": "191.73 MB"
+                      }
+                  }
+              }
           }
-      }
       }
     },
     "Your lie in april": {
