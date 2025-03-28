@@ -4,12 +4,16 @@ const fs = require('fs');
 const path = require('path'); 
 require('dotenv').config();
 const bot = new Telegraf("7846813473:AAF77LtoEGmiBiok85Q7oO00yWFvCog8llU");
+const User = require("./user"); 
+const connectDB = require("./config"); // Import the connection function
+const ids = require("../data/ids.json");
+connectDB();
+
 
 const LOG_FILE = path.join(__dirname, '../logs', 'actions.txt');
 const DATA_FILE = path.join(__dirname, "../data", "data.json");
 const userSelections = {};
 const userPageData = {}; // Store current page per user
-
 
 // ✅ Load anime data from local file first
 function loadLocalAnimeData() {
@@ -25,16 +29,18 @@ function loadLocalAnimeData() {
 // 🔄 Fetch anime data every 5-10 minutes
 loadLocalAnimeData();
 
-// ✅ Log user activity
-function logActivity(ctx, action) {
-    const user = ctx.from;
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] ${user.first_name} ${user.last_name || ""} (ID: ${user.id}) - ${action}\n`;
 
-    console.log(logEntry.trim());
+function logActivity(ctx, message) {
+    
+    const logEntry = `[${new Date().toISOString()}] (${ctx.from.id}) ${ctx.from.first_name}: ${message}\n`;
+
+    // Append log to file
     fs.appendFile(LOG_FILE, logEntry, (err) => {
         if (err) console.error("❌ Error writing log:", err);
     });
+
+    // Print log to console
+    console.log(logEntry);
 }
 
 // ✅ Function to get file_id based on anime_id, season, episode, and quality
@@ -58,36 +64,93 @@ function getFileIdFromParams(animeId, seasonId, episodeId, quality) {
     return null;
 }
 
-bot.start((ctx) => {
-    logActivity(ctx, "Started the bot");
+function getMalId(animeId) {
+    return ids[animeId] || null;
+}
+
+bot.start(async (ctx) => {
+    logActivity(ctx, "🚀 Bot started");
 
     const startPayload = ctx.startPayload;
-    logActivity(ctx, `Raw startPayload: ${startPayload}`);
-
-    if (startPayload) {
-        const params = startPayload.split("_");
-        const animeId = params[0] || null;
-        const seasonId = params[1] || null;
-        const episodeId = params[2] || null;
-        const quality = params[3] || null;
-
-        logActivity(ctx, `Parsed Start Payload: anime_id=${animeId}, season_id=${seasonId}, episode_id=${episodeId}, quality=${quality}`);
-
-        if (animeId && seasonId && episodeId && quality) {
-            const fileId = getFileIdFromParams(animeId, seasonId, episodeId, quality);
-            if (fileId) {
-                ctx.replyWithVideo(fileId, { caption: `📺 **Episode ${episodeId}** | 🎞️ Quality: *${quality}*`, parse_mode: "Markdown" });
-            } else {
-                ctx.reply("⚠ *This episode or quality is currently unavailable.*", { parse_mode: "Markdown" });
-            }
-        } else {
-            ctx.reply("⚠ *Invalid deep link!*\nMake sure you're using a correct format.", { parse_mode: "Markdown" });
-        }
-    } else {
-        ctx.reply("👋 *Welcome to the Noasaga Bot!* 🎌\n\n💡 *Browse & download your favorite anime episodes!*", {
+    if (!startPayload) {
+        return ctx.reply("👋 *Welcome to the Noasaga Bot!* 🎌\n\n💡 *Browse & download your favorite anime episodes!*", {
             reply_markup: { inline_keyboard: [[{ text: "🎬 Browse Anime", callback_data: "browse_anime" }]] },
             parse_mode: "Markdown"
         });
+    }
+
+    const [animeId, seasonId, episodeId, quality] = startPayload.split("_");
+    if (!(animeId && seasonId && episodeId && quality)) {
+        return ctx.reply("⚠ *Invalid deep link!*\nMake sure you're using a correct format.", { parse_mode: "Markdown" });
+    }
+
+    logActivity(ctx, `📥 Received Payload → anime_id=${animeId}, season_id=${seasonId}, episode_id=${episodeId}, quality=${quality}`);
+
+    const fileId = getFileIdFromParams(animeId, seasonId, episodeId, quality);
+    if (fileId) {
+        ctx.replyWithVideo(fileId, { caption: `📺 **Episode ${episodeId}** | 🎞️ Quality: *${quality}*`, parse_mode: "Markdown" });
+    } else {
+        return ctx.reply("⚠ *This episode or quality is currently unavailable.*", { parse_mode: "Markdown" });
+    }
+
+    // 🔍 Find MAL ID
+    const mal_id = getMalId(animeId);
+    if (!mal_id) {
+        logActivity(ctx, `❌ MAL ID not found for anime_id: ${animeId}`);
+        return;
+    }
+
+    logActivity(ctx, `✅ Found MAL ID: ${mal_id}`);
+
+    try {
+        // 📡 Fetch Anime Details from Jikan API
+        const jikanResponse = await axios.get(`https://api.jikan.moe/v4/anime/${mal_id}`);
+        const animeData = jikanResponse.data.data;
+        if (!animeData) {
+            logActivity(ctx, `❌ No data found for MAL ID: ${mal_id}`);
+            return;
+        }
+
+        const title = animeData.title;
+        const genres = animeData.genres.map(g => g.name);
+        logActivity(ctx, `📡 Jikan API Response → Title: ${title}`);
+
+        // 📝 Check if Anime Already Exists in User's List
+        const userId = ctx.from.id;
+        const firstName = ctx.from.first_name;
+        const lastName = ctx.from.last_name || "";
+        const username = ctx.from.username || "";
+
+        const userData = await User.findOne({ userId });
+
+        if (userData) {
+            const existingAnime = userData.watchedAnime.find(anime => Number(anime.mal_id) === Number(mal_id));
+            if (existingAnime) {
+                logActivity(ctx, `⏳ Anime already in watchlist: ${title} (MAL ID: ${mal_id}) ❌ Skipping DB insert.`);
+            } else {
+                logActivity(ctx, `🆕 Adding new anime to watched list: ${title} (MAL ID: ${mal_id})`);
+                await User.updateOne(
+                    { userId },
+                    { $push: { watchedAnime: { mal_id, title, genres } } }
+                );
+                logActivity(ctx, `✅ Successfully added ${title}`);
+            }
+        } else {
+            logActivity(ctx, `🆕 New user detected! Creating profile for ${firstName}`);
+            await User.create({
+                userId,
+                firstName,
+                lastName,
+                username,
+                watchedAnime: [{ mal_id, title, genres }]
+            });
+            logActivity(ctx, `✅ New user profile created & anime added: ${title}`);
+        }
+
+        await updateUserGenreStats(userId);
+
+    } catch (error) {
+        console.error("❌ Error fetching from Jikan API or saving to DB:", error);
     }
 });
 
@@ -123,17 +186,128 @@ function sendAnimeList(ctx, page = 1) {
     });
 }
 
+const updateUserGenreStats = async (userId) => {
+    try {
+        const user = await User.findOne({ userId });
 
-// ✅ Handle anime selection
-bot.action(/anime_(.+)/, (ctx) => {
+        if (!user || !user.watchedAnime || user.watchedAnime.length === 0) {
+            console.log(`❌ No watched anime found for user ${userId}`);
+            return;
+        }
+
+        // 🔢 Count occurrences of each genre
+        const genreCounts = new Map();
+        let totalAnime = user.watchedAnime.length;
+
+        user.watchedAnime.forEach(anime => {
+            if (anime.genres && Array.isArray(anime.genres)) {
+                anime.genres.forEach(genre => {
+                    genreCounts.set(genre, (genreCounts.get(genre) || 0) + 1);
+                });
+            }
+        });
+
+        // 📊 Convert counts into percentages
+        const genreWeights = {};
+        for (const [genre, count] of genreCounts.entries()) {
+            genreWeights[genre] = parseFloat(((count / totalAnime) * 100).toFixed(2));
+        }
+
+        // 🔄 Update MongoDB (`genreWeights`)
+        await User.updateOne({ userId }, { $set: { genreWeights } });
+
+        console.log(`✅ Genre weights updated for user ${userId}:`, genreWeights);
+    } catch (error) {
+        console.error("❌ Error updating genre weights:", error);
+    }
+};
+
+bot.action(/anime_(.+)/, async (ctx) => {
     const animeName = ctx.match[1];
-    logActivity(ctx, `Selected Anime: ${animeName}`);
+    logActivity(ctx, `🎬 Selected Anime: ${animeName}`);
 
     userSelections[ctx.from.id] = { anime: animeName, season: "", episodes: [] };
 
+    // 🔍 Fetch anime_id from data.json
     const animeInfo = animeDataCache[animeName];
     if (!animeInfo) return ctx.reply("❌ Anime not found.");
 
+    const animeId = animeInfo.anime_id; // Get anime_id
+    if (!animeId) {
+        logActivity(ctx, `❌ anime_id not found for: ${animeName}`);
+        return ctx.reply("⚠ *Could not find anime ID.*", { parse_mode: "Markdown" });
+    }
+
+    logActivity(ctx, `✅ Found anime_id: ${animeId}`);
+
+    // 🎌 Fetch MAL ID from ids.json
+    const malId = getMalId(animeId);
+    if (!malId) {
+        logActivity(ctx, `❌ MAL ID not found for anime_id: ${animeId}`);
+    } else {
+        logActivity(ctx, `✅ Found MAL ID: ${malId}`);
+    }
+
+    // 📡 Fetch Anime Details from Jikan API
+    try {
+        const jikanResponse = await axios.get(`https://api.jikan.moe/v4/anime/${malId}`);
+        const animeData = jikanResponse.data.data;
+        if (!animeData) return;
+
+        const title = animeData.title;
+        const genres = animeData.genres.map(g => g.name);
+        logActivity(ctx, `📡 Jikan API → Title: ${title}`);
+
+        // 📝 Store in MongoDB
+        const userId = ctx.from.id;
+        const firstName = ctx.from.first_name;
+        const lastName = ctx.from.last_name || "";
+        const username = ctx.from.username || "";
+
+        // 🔍 **Check if User Exists**
+        let userData = await User.findOne({ userId });
+
+        if (!userData) {
+            logActivity(ctx, `🆕 New user detected! Creating profile for ${firstName}`);
+            userData = await User.create({
+                userId,
+                firstName,
+                lastName,
+                username,
+                watchedAnime: []
+            });
+        }
+
+        // ✅ **Ensure watchedAnime is an array**
+        if (!Array.isArray(userData.watchedAnime)) {
+            logActivity(ctx, `❌ watchedAnime is not an array, resetting it.`);
+            userData.watchedAnime = [];
+        }
+
+        // 🔍 **Check if Anime Already Exists**
+        logActivity(ctx, `📂 Checking watchedAnime list: ${JSON.stringify(userData.watchedAnime, null, 2)}`);
+        
+        const existingAnime = userData.watchedAnime.some(anime => anime.mal_id == malId);
+        logActivity(ctx, `🔍 Found existingAnime: ${existingAnime ? "✅ Yes" : "❌ No"}`);                    
+
+        if (existingAnime) {
+            logActivity(ctx, `⏳ Anime already in watchlist: ${title} (MAL ID: ${malId}) ❌ Skipping DB insert.`);
+        } else {
+            logActivity(ctx, `🆕 Adding new anime to watched list: ${title} (MAL ID: ${malId})`);
+            await User.updateOne(
+                { userId },
+                { $push: { watchedAnime: { malId, title, genres } } }
+            );
+            logActivity(ctx, `✅ Successfully added ${title}`);
+        }
+
+        await updateUserGenreStats(userId);
+
+    } catch (error) {
+        console.error("❌ Error fetching from Jikan API or saving to DB:", error);
+    }
+
+    // 🎭 Show season selection
     const keyboard = Object.keys(animeInfo)
         .filter(key => key !== 'anime_id' && typeof animeInfo[key] === 'object')
         .map(season => [{
@@ -244,6 +418,8 @@ bot.action(/multi_quality_(.+)_(.+)_(.+)/, async (ctx) => {
         }
     }
 
+    await updateUserGenreStats(ctx.from.id);
+
     await ctx.reply("🔄 *Want to select more anime?*", {
         reply_markup: { inline_keyboard: [[{ text: "🎬 Browse More", callback_data: "browse_anime" }]] },
         parse_mode: "Markdown"
@@ -279,4 +455,9 @@ bot.command('about', (ctx) => {
 `, { parse_mode: 'Markdown', disable_web_page_preview: true });
 });
 
-bot.launch();
+try {
+    bot.launch();
+    console.log("✅ Bot is running!");
+} catch (error) {
+    console.error("❌ Bot failed to launch:", error);
+}
