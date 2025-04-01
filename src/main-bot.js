@@ -326,37 +326,22 @@ bot.start(async (ctx) => {
     }
 });
 
+function sendAnimeList(ctx) {
+    const animeKeys = Object.keys(animeDataCache); // Your anime data
 
-function sendAnimeList(ctx, page = 1) {
-    const userId = ctx.from.id;
-    const animeKeys = Object.keys(animeDataCache);
-    const pageSize = 10; // Show 10 anime per page
-    const totalPages = Math.ceil(animeKeys.length / pageSize);
-
-    userPageData[userId] = page; // Store user's page
-
-    // Get anime for this page
-    const startIdx = (page - 1) * pageSize;
-    const endIdx = startIdx + pageSize;
-    const paginatedAnime = animeKeys.slice(startIdx, endIdx);
-
-    // Create buttons
-    const keyboard = paginatedAnime.map(anime => [{
+    // Create a list of all anime
+    const animeList = animeKeys.map(anime => [{
         text: anime,
         callback_data: `anime_${anime}`
     }]);
 
-    // Add pagination controls
-    const navButtons = [];
-    if (page > 1) navButtons.push({ text: "⬅ Back", callback_data: `page_${page - 1}` });
-    if (page < totalPages) navButtons.push({ text: "Next ➡", callback_data: `page_${page + 1}` });
-    if (navButtons.length) keyboard.push(navButtons);
-
-    ctx.editMessageText(`📜 *Choose an anime (Page ${page}/${totalPages}):*`, {
-        reply_markup: { inline_keyboard: keyboard },
+    // Send the list of anime as a simple inline keyboard
+    ctx.editMessageText("📜 *Choose an anime:* ", {
+        reply_markup: { inline_keyboard: animeList },
         parse_mode: "Markdown"
     });
 }
+
 
 const updateUserGenreStats = async (userId) => {
     try {
