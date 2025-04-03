@@ -115,7 +115,6 @@ const GENRE_NAME_TO_ID = {
     "Josei": 43
 };
 
-
 const recommendAnime = async (ctx) => {
     try {
         const userId = ctx.from.id;
@@ -127,9 +126,8 @@ const recommendAnime = async (ctx) => {
             return ctx.reply("❌ *Not enough data!* Watch more anime to get recommendations.", { parse_mode: "Markdown" });
         }
 
-        // 📊 Extract & sort genres
-        const genreWeightsMap = user.genreWeights || new Map();
-        const genreWeightsObj = Object.fromEntries(genreWeightsMap);
+        // 📊 Extract & sort genres (fixing Map conversion issue)
+        const genreWeightsObj = Object.fromEntries(user.genreWeights.entries());
         const topGenres = Object.entries(genreWeightsObj)
             .sort((a, b) => b[1] - a[1]) // Sort descending
             .slice(0, 3) // Take top 3 genres
@@ -148,11 +146,11 @@ const recommendAnime = async (ctx) => {
         // 🛑 Get a list of already watched anime MAL IDs
         const watchedAnimeIds = new Set(user.watchedAnime.map(a => a.mal_id));
 
-        let recommendedAnime = [];
+        let recommendedAnime = new Set(); // Using a Set to ensure unique anime
 
         // 📡 Fetch top anime from Jikan API for each genre
         for (let genreId of genreIds) {
-            if (recommendedAnime.length >= 3) break; // Limit to 3 genre-based recommendations
+            if (recommendedAnime.size >= 3) break; // Limit to 3 genre-based recommendations
 
             try {
                 const response = await axios.get(`https://api.jikan.moe/v4/anime`, {
@@ -167,19 +165,20 @@ const recommendAnime = async (ctx) => {
                 const animeList = response.data.data || [];
                 console.log(`🔍 Jikan API → Genre ID ${genreId}: Found ${animeList.length} animes`);
 
-                // Filter out watched anime
-                const filteredAnime = animeList.filter(anime => !watchedAnimeIds.has(anime.mal_id));
-                
-                if (filteredAnime.length > 0) {
-                    recommendedAnime.push(filteredAnime[0]); 
-                }
+                // Filter out watched anime & ensure uniqueness
+                animeList.forEach(anime => {
+                    if (!watchedAnimeIds.has(anime.mal_id) && !recommendedAnime.has(anime.mal_id) && recommendedAnime.size < 3) {
+                        recommendedAnime.add(anime);
+                    }
+                });
+
             } catch (error) {
                 console.error(`❌ Error fetching anime for genre ID: ${genreId}`, error);
             }
         }
 
         // 🎯 Fetch 2 most popular anime of the week
-        if (recommendedAnime.length < 5) {
+        if (recommendedAnime.size < 5) {
             try {
                 const response = await axios.get(`https://api.jikan.moe/v4/top/anime`, {
                     params: { 
@@ -191,19 +190,20 @@ const recommendAnime = async (ctx) => {
                 const popularAnimeList = response.data.data || [];
                 console.log(`🔥 Jikan API → Most Popular Anime: Found ${popularAnimeList.length} animes`);
 
-                // Filter out watched anime & already recommended ones
-                const filteredPopularAnime = popularAnimeList.filter(anime => 
-                    !watchedAnimeIds.has(anime.mal_id) && 
-                    !recommendedAnime.some(a => a.mal_id === anime.mal_id)
-                );
+                // Filter out watched anime & ensure uniqueness
+                popularAnimeList.forEach(anime => {
+                    if (!watchedAnimeIds.has(anime.mal_id) && !recommendedAnime.has(anime.mal_id) && recommendedAnime.size < 5) {
+                        recommendedAnime.add(anime);
+                    }
+                });
 
-                while (recommendedAnime.length < 5 && filteredPopularAnime.length > 0) {
-                    recommendedAnime.push(filteredPopularAnime.shift()); 
-                }
             } catch (error) {
                 console.error("❌ Error fetching popular anime:", error);
             }
         }
+
+        // Convert Set to Array
+        recommendedAnime = [...recommendedAnime];
 
         if (recommendedAnime.length === 0) {
             return ctx.reply("⚠ *No new anime found!* Try watching more to improve recommendations.", { parse_mode: "Markdown" });
