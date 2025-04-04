@@ -32,13 +32,31 @@ let userState = {};
 bot.start((ctx) => {
     let channelId = getChannel();
     if (channelId) {
-        ctx.reply(`✅ Using saved channel.`);
-        userState[ctx.from.id] = { step: "waiting_for_seasons", channelId };
-        ctx.reply("Now, enter the number of seasons (e.g., 1)");
+        ctx.reply(
+            "📌 Choose an option:",
+            Markup.inlineKeyboard([
+                [Markup.button.callback("✅ Send Episodes", "send_episodes")],
+                [Markup.button.callback("📊 Send Poll", "send_poll")],
+            ])
+        );
     } else {
-        ctx.reply("Please forward a message from the channel.");
+        ctx.reply("⚠️ Please forward a message from the channel first.");
         userState[ctx.from.id] = { step: "waiting_for_channel" };
     }
+});
+
+// Handle button clicks
+bot.action("send_episodes", (ctx) => {
+    ctx.reply("📅 Enter the number of seasons (e.g., 1):");
+    userState[ctx.from.id] = { step: "waiting_for_seasons", episodes: {}, currentSeason: 1 };
+});
+
+bot.action("send_poll", async (ctx) => {
+    let channelId = getChannel();
+    if (!channelId) return ctx.reply("⚠️ No channel found. Forward a message first.");
+
+    sendRatingPoll(channelId);
+    ctx.reply("✅ Poll sent!");
 });
 
 // Message handling
@@ -50,8 +68,8 @@ bot.on("message", async (ctx) => {
         if (ctx.message.forward_from_chat) {
             let channelId = ctx.message.forward_from_chat.id;
             saveChannel(channelId);
-            userState[userId] = { step: "waiting_for_seasons", channelId, episodes: {}, currentSeason: 1 };
             ctx.reply("✅ Channel saved! Now, enter the number of seasons:");
+            userState[userId] = { step: "waiting_for_seasons", channelId, episodes: {}, currentSeason: 1 };
         } else {
             ctx.reply("⚠️ Forward a valid channel message.");
         }
@@ -60,12 +78,10 @@ bot.on("message", async (ctx) => {
         let seasons = parseInt(ctx.message.text);
         if (!isNaN(seasons) && seasons > 0) {
             userState[userId].seasons = seasons;
-            userState[userId].episodes = {};  // Ensure it's initialized
-            userState[userId].currentSeason = 1;
             userState[userId].step = "waiting_for_episodes";
-            ctx.reply(`Now enter the number of episodes for Season 1:`);
+            ctx.reply(`📅 Now enter the number of episodes for Season 1:`);
         } else {
-            ctx.reply("⚠️ Invalid input. Please enter a number.");
+            ctx.reply("⚠️ Invalid input. Please enter a valid number.");
         }
     } 
     else if (state.step === "waiting_for_episodes") {
@@ -73,11 +89,11 @@ bot.on("message", async (ctx) => {
         let episodes = parseInt(ctx.message.text);
 
         if (!isNaN(episodes) && episodes > 0) {
-            userState[userId].episodes[seasonNum] = episodes; // Ensure season is properly saved
+            userState[userId].episodes[seasonNum] = episodes;
 
             if (seasonNum < userState[userId].seasons) {
-                userState[userId].currentSeason++; // Move to the next season
-                ctx.reply(`Now enter the number of episodes for Season ${userState[userId].currentSeason}:`);
+                userState[userId].currentSeason++;
+                ctx.reply(`📅 Now enter the number of episodes for Season ${userState[userId].currentSeason}:`);
             } else {
                 userState[userId].step = "waiting_for_anime_code";
                 ctx.reply("✅ All seasons recorded! Now enter the anime code:");
@@ -91,11 +107,11 @@ bot.on("message", async (ctx) => {
         userState[userId].step = "ready_to_send";
         ctx.reply("✅ Anime code recorded! Now sending messages...");
 
-        sendMessages(userId); // Call the function to start sending messages
+        sendMessages(userId);
     }
 });
 
-// Send messages
+// Send messages with delay
 async function sendMessages(userId) {
     let state = userState[userId];
     let channelId = state.channelId;
@@ -104,10 +120,7 @@ async function sendMessages(userId) {
     for (let season = 1; season <= state.seasons; season++) {
         for (let episode = 1; episode <= state.episodes[season]; episode++) {
             let messageText = `
-            📺 <b>Season ${season} Episode ${episode}</b> 🟢
-            🍿 <i>Watch now in HD:</i>
-            `;
-            
+📺 <b>Season ${season} Episode ${episode}</b> 🟢`;
 
             let videoButtons = Markup.inlineKeyboard([
                 [
@@ -122,10 +135,32 @@ async function sendMessages(userId) {
                     parse_mode: "HTML", 
                     ...videoButtons 
                 });
+                await new Promise(resolve => setTimeout(resolve, 12000)); // 2-second delay
             } catch (error) {
                 console.log("❌ Error sending message:", error);
             }
         }
+    }
+
+    // After sending all episodes, prompt for poll
+    bot.telegram.sendMessage(
+        channelId,
+        "Would you like to send a rating poll?",
+        Markup.inlineKeyboard([[Markup.button.callback("📊 Send Poll", "send_poll")]])
+    );
+}
+
+// Function to send a rating poll
+async function sendRatingPoll(channelId) {
+    try {
+        await bot.telegram.sendPoll(
+            channelId,
+            "🎭 Rate this anime!",
+            ["2/10", "4/10", "6/10", "8/10", "10/10"],
+            { is_anonymous: true }
+        );
+    } catch (error) {
+        console.error("❌ Error sending poll:", error);
     }
 }
 

@@ -9,7 +9,6 @@ const connectDB = require("./config"); // Import the connection function
 const ids = require("../data/ids.json");
 connectDB();
 
-
 const LOG_FILE = path.join(__dirname, '../logs', 'actions.txt');
 const DATA_FILE = path.join(__dirname, "../data", "data.json");
 const channelLinks = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/channel_links.json"), "utf8"));
@@ -616,6 +615,50 @@ bot.command('about', (ctx) => {
 
 🎭 *Enjoy streaming & downloading anime hassle-free!*
 `, { parse_mode: 'Markdown', disable_web_page_preview: true });
+});
+
+//ADMIN SECTIONN
+
+// 🔹 Reset queue (Clear pending messages)
+async function resetQueue() {
+    try {
+        pendingMessages = {}; // Clear in-memory queue
+        console.log('✅ Cleared all pending Telegram queues.');
+    } catch (error) {
+        console.error('❌ Error resetting queue:', error.message);
+    }
+}
+
+// 🔹 Command to manually reset queue (Admin only)
+bot.command('resetqueue', async (ctx) => {
+    if (ctx.from.id === 7020664469) { // Replace with your admin ID
+        await resetQueue();
+        ctx.reply('✅ Queue has been reset.');
+    } else {
+        ctx.reply('❌ You are not authorized to reset the queue.');
+    }
+});
+
+// 🔹 Handle unexpected errors (Prevents bot from crashing)
+process.on('uncaughtException', (err) => {
+    console.error('❌ Uncaught Exception:', err);
+});
+
+process.on('unhandledRejection', (err) => {
+    console.error('❌ Unhandled Rejection:', err);
+});
+
+// 🔹 Middleware to ignore 403 errors
+bot.use(async (ctx, next) => {
+    try {
+        await next(); // Process message normally
+    } catch (error) {
+        if (error.response && error.response.error_code === 403) {
+            console.log(`🚨 User ${ctx.chat.id} blocked the bot. Ignoring message.`);
+        } else {
+            console.error('❌ Telegram Error:', error.message);
+        }
+    }
 });
 
 try {
