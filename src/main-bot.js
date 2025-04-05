@@ -42,8 +42,7 @@ function logActivity(ctx, message) {
     // Print log to console
     console.log(logEntry);
 }
-
-// ✅ Function to get file_id based on anime_id, season, episode, and quality
+// ✅ For 4-arg: animeId, seasonId, episodeId, quality
 function getFileIdFromParams(animeId, seasonId, episodeId, quality) {
     for (const anime in animeDataCache) {
         if (animeDataCache[anime].anime_id === animeId) {
@@ -51,10 +50,18 @@ function getFileIdFromParams(animeId, seasonId, episodeId, quality) {
             for (const season in seasons) {
                 if (seasons[season].season_id === seasonId) {
                     const episodes = seasons[season].episodes;
-                    for (const episode in episodes) {
-                        if (episodes[episode].ep_number === episodeId) {
-                            const fileData = episodes[episode].qualities[quality];
-                            return fileData ? fileData.file_id : null;
+                    for (const ep in episodes) {
+                        if (episodes[ep].ep_number === episodeId) {
+                            const fileData = episodes[ep].qualities?.[quality];
+                            if (fileData?.file_id) {
+                                return {
+                                    file_id: fileData.file_id,
+                                    file_size: fileData.file_size,
+                                    season_number: seasonId.replace("s", ""),
+                                    episode_number: episodeId,
+                                    quality
+                                };
+                            }
                         }
                     }
                 }
@@ -62,6 +69,36 @@ function getFileIdFromParams(animeId, seasonId, episodeId, quality) {
         }
     }
     return null;
+}
+
+// ✅ For 3-arg: animeId, seasonId, quality → returns all episodes of a season
+function getFileIdsForSeason(animeId, seasonId, quality) {
+    const result = [];
+
+    for (const anime in animeDataCache) {
+        if (animeDataCache[anime].anime_id === animeId) {
+            const seasons = animeDataCache[anime];
+            for (const season in seasons) {
+                if (seasons[season].season_id === seasonId) {
+                    const episodes = seasons[season].episodes;
+                    for (const ep in episodes) {
+                        const fileData = episodes[ep].qualities?.[quality];
+                        if (fileData?.file_id) {
+                            result.push({
+                                file_id: fileData.file_id,
+                                file_size: fileData.file_size,
+                                ep_number: episodes[ep].ep_number,
+                                season_number: seasonId.replace("s", ""),
+                                quality
+                            });
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    return result;
 }
 
 function getMalId(animeId) {
@@ -230,7 +267,6 @@ const recommendAnime = async (ctx) => {
     }
 };
 
-
 bot.start(async (ctx) => {
     logActivity(ctx, "🚀 Bot started");
 
@@ -242,51 +278,40 @@ bot.start(async (ctx) => {
                 reply_markup: {
                     inline_keyboard: [
                         [{ text: "🎬 Browse Anime", callback_data: "browse_anime" }],
-                        [{ text: "🎯 Recommend Anime", callback_data: "recommend_anime" }] // ✅ New Button
+                        [{ text: "🎯 Recommend Anime", callback_data: "recommend_anime" }]
                     ]
                 },
                 parse_mode: "Markdown"
             }
-        );        
+        );
     }
 
-    const [animeId, seasonId, episodeId, quality] = startPayload.split("_");
-    if (!(animeId && seasonId && episodeId && quality)) {
-        return ctx.reply("⚠ *Invalid deep link!*\nMake sure you're using a correct format.", { parse_mode: "Markdown" });
+    const parts = startPayload.split("_");
+    const [animeId, seasonId, episodeIdOrQuality, qualityMaybe] = parts;
+
+    logActivity(ctx, `📥 Payload received: ${startPayload}`);
+
+    const isFourArgs = parts.length === 4;
+    const animeIdValid = Boolean(animeId && seasonId);
+
+    if (!animeIdValid || (!episodeIdOrQuality)) {
+        return ctx.reply("⚠ *Invalid deep link!*\nMake sure you're using the correct format.", {
+            parse_mode: "Markdown"
+        });
     }
-
-    logActivity(ctx, `📥 Received Payload → anime_id=${animeId}, season_id=${seasonId}, episode_id=${episodeId}, quality=${quality}`);
-
-    const fileId = getFileIdFromParams(animeId, seasonId, episodeId, quality);
-    if (fileId) {
-        ctx.replyWithVideo(fileId, { caption: `📺 **Episode ${episodeId}** | 🎞️ Quality: *${quality}*`, parse_mode: "Markdown" });
-    } else {
-        return ctx.reply("⚠ *This episode or quality is currently unavailable.*", { parse_mode: "Markdown" });
-    }
-
-    // 🔍 Find MAL ID
-    const mal_id = getMalId(animeId);
-    if (!mal_id) {
-        logActivity(ctx, `❌ MAL ID not found for anime_id: ${animeId}`);
-        return;
-    }
-
-    logActivity(ctx, `✅ Found MAL ID: ${mal_id}`);
 
     try {
-        // 📡 Fetch Anime Details from Jikan API
-        const jikanResponse = await axios.get(`https://api.jikan.moe/v4/anime/${mal_id}`);
-        const animeData = jikanResponse.data.data;
-        if (!animeData) {
-            logActivity(ctx, `❌ No data found for MAL ID: ${mal_id}`);
-            return;
+        const mal_id = getMalId(animeId);
+        if (!mal_id) {
+            logActivity(ctx, `❌ MAL ID not found for animeId: ${animeId}`);
+            return ctx.reply("❌ *Anime not recognized.*", { parse_mode: "Markdown" });
         }
 
-        const title = animeData.title;
-        const genres = animeData.genres.map(g => g.name);
-        logActivity(ctx, `📡 Jikan API Response → Title: ${title}`);
+        const jikanResponse = await axios.get(`https://api.jikan.moe/v4/anime/${mal_id}`);
+        const animeData = jikanResponse.data.data;
+        const animeTitle = animeData?.title || "Unknown Anime";
+        const genres = animeData.genres.map((g) => g.name);
 
-        // 📝 Check if Anime Already Exists in User's List
         const userId = ctx.from.id;
         const firstName = ctx.from.first_name;
         const lastName = ctx.from.last_name || "";
@@ -295,35 +320,81 @@ bot.start(async (ctx) => {
         const userData = await User.findOne({ userId });
 
         if (userData) {
-            const existingAnime = userData.watchedAnime.find(anime => Number(anime.mal_id) === Number(mal_id));
-            if (existingAnime) {
-                logActivity(ctx, `⏳ Anime already in watchlist: ${title} (MAL ID: ${mal_id}) ❌ Skipping DB insert.`);
-            } else {
-                logActivity(ctx, `🆕 Adding new anime to watched list: ${title} (MAL ID: ${mal_id})`);
+            const existingAnime = userData.watchedAnime.find(
+                (anime) => Number(anime.mal_id) === Number(mal_id)
+            );
+            if (!existingAnime) {
                 await User.updateOne(
                     { userId },
-                    { $push: { watchedAnime: { mal_id, title, genres } } }
+                    { $push: { watchedAnime: { mal_id, title: animeTitle, genres } } }
                 );
-                logActivity(ctx, `✅ Successfully added ${title}`);
+                logActivity(ctx, `✅ Added ${animeTitle} to user ${userId}`);
+            } else {
+                logActivity(ctx, `⏳ Anime already in watchlist: ${animeTitle}`);
             }
         } else {
-            logActivity(ctx, `🆕 New user detected! Creating profile for ${firstName}`);
             await User.create({
                 userId,
                 firstName,
                 lastName,
                 username,
-                watchedAnime: [{ mal_id, title, genres }]
+                watchedAnime: [{ mal_id, title: animeTitle, genres }]
             });
-            logActivity(ctx, `✅ New user profile created & anime added: ${title}`);
+            logActivity(ctx, `✅ New user created and anime added: ${animeTitle}`);
         }
 
         await updateUserGenreStats(userId);
 
+        // ✅ Handle 4-arg deep link
+        if (isFourArgs) {
+            const [animeId, seasonId, episodeId, quality] = parts;
+            const fileObj = getFileIdFromParams(animeId, seasonId, episodeId, quality);
+
+            if (!fileObj) {
+                return ctx.reply("⚠ *This episode or quality is currently unavailable.*", {
+                    parse_mode: "Markdown"
+                });
+            }
+
+            await ctx.replyWithVideo(fileObj.file_id, {
+                caption: `🎬 *${animeTitle}*\n📺 Episode: *${fileObj.episode_number}*\n📦 Quality: *${quality}* (${fileObj.file_size})\n📚 Season: *${fileObj.season_number}*`,
+                parse_mode: "Markdown"
+            });
+            logActivity(ctx, `✅ Sent Episode ${fileObj.episode_number}`);
+        }
+
+        // ✅ Handle 3-arg deep link
+        else {
+            const [animeId, seasonId, quality] = parts;
+            const files = getFileIdsForSeason(animeId, seasonId, quality);
+
+            if (files.length === 0) {
+                return ctx.reply("⚠ *No episodes available for this quality.*", {
+                    parse_mode: "Markdown"
+                });
+            }
+
+            logActivity(ctx, `📦 Sending ${files.length} episodes in ${quality}...`);
+            for (const file of files) {
+                try {
+                    await ctx.replyWithVideo(file.file_id, {
+                        caption: `🎬 *${animeTitle}*\n📺 Episode: *${file.ep_number}*\n📦 Quality: *${quality}* (${file.file_size})\n📚 Season: *${file.season_number}*`,
+                        parse_mode: "Markdown"
+                    });
+                    logActivity(ctx, `✅ Sent Episode ${file.ep_number}`);
+                } catch (err) {
+                    logActivity(ctx, `❌ Failed to send Episode ${file.ep_number} → ${err.message}`);
+                }
+            }
+        }
     } catch (error) {
-        console.error("❌ Error fetching from Jikan API or saving to DB:", error);
+        logActivity(ctx, `❌ Error in bot.start: ${error.message}`);
+        return ctx.reply("❌ *Something went wrong while processing your request.*", {
+            parse_mode: "Markdown"
+        });
     }
 });
+
 
 function sendAnimeList(ctx) {
     const animeKeys = Object.keys(animeDataCache); // Your anime data
