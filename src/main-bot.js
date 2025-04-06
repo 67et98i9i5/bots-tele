@@ -13,7 +13,7 @@ const LOG_FILE = path.join(__dirname, '../logs', 'actions.txt');
 const DATA_FILE = path.join(__dirname, "../data", "data.json");
 const channelLinks = JSON.parse(fs.readFileSync(path.join(__dirname, "../data/channel_links.json"), "utf8"));
 const userSelections = {};
-const userPageData = {}; // Store current page per user
+const userPageData = {}; // Store current page per 
 
 // ✅ Load anime data from local file first
 function loadLocalAnimeData() {
@@ -732,9 +732,13 @@ bot.use(async (ctx, next) => {
     }
 });
 
-try {
-    bot.launch();
-    console.log("✅ Bot is running!");
-} catch (error) {
-    console.error("❌ Bot failed to launch:", error);
-}
+(async () => {
+    try {
+        await bot.telegram.deleteWebhook(); // 🧹 Remove active webhook
+        await bot.launch();                 // 🚀 Start bot using polling
+        console.log("✅ Bot is running!");
+    } catch (error) {
+        console.error("❌ Bot failed to launch:", error);
+    }
+})();
+
