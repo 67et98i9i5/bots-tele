@@ -4883,33 +4883,33 @@
     "Princess Mononoke": {
       "anime_id": "67902",
       "Season 1": {
-        "season_id": "s1",
-        "episodes": {
-          "Episode 1": {
-            "ep_name": "Episode 1",
-            "ep_number": "1",
-            "qualities": {
-              "360p": {
-                "file_url": "N/A",
-                "file_size": "N/A MB",
-                "file_id": "",
-                "file_unique_id": ""
-              },
-              "720p": {
-                "file_url": "N/A",
-                "file_size": "N/A",
-                "file_id": "",
-                "file_unique_id": ""
-              },
-              "1080p": {
-                "file_url": "https://drive.google.com/file/d/1AJr5fefFEPsu5YDJ2_AMI73OJFForULt/view?usp=sharing",
-                "file_size": "1.23 GB",
-                "file_id": "",
-                "file_unique_id": ""
+          "season_id": "s1",
+          "episodes": {
+              "Episode 1": {
+                  "ep_name": "Episode 1",
+                  "ep_number": "1",
+                  "qualities": {
+                      "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASAZJyNAAMCZ_f7df7BHImWF07YhIO0Ef764eAAArAUAAIxJMFXafEHtzsxOUc2BA",
+                                "file_unique_id": "AgADsBQAAjEkwVc",
+                                "file_size": "283.16 MB"
+                            },
+                      "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASAZJyNAAMDZ_f95EA7g9qpnemAtiYELEheQcUAArQUAAIxJMFXxgPrpaWS8NM2BA",
+                                "file_unique_id": "AgADtBQAAjEkwVc",
+                                "file_size": "1131.38 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASAZJyNAAMEZ_gB6kp3O-iC4GrUgzl775aV6FkAArkUAAIxJMFXoCwPQ4iuA0A2BA",
+                                "file_unique_id": "AgADuRQAAjEkwVc",
+                                "file_size": "1916.37 MB"
+                            }
+                  }
               }
-            }
           }
-        }
       }
     },
     "Sakamoto Days": {
