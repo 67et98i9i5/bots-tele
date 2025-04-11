@@ -7301,6 +7301,30 @@
                                 "file_size": "222.83 MB"
                             }
                         }
+                    },
+                    "Episode 14": {
+                        "ep_name": "Episode 14",
+                        "ep_number": "14",
+                        "qualities": {
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASWM1X8AAMFZ_lgvB1q7YON4Suq9JJ6wLF2Nd0AAlATAAKWxdBXcapBM2HqIu02BA",
+                                "file_unique_id": "AgADUBMAApbF0Fc",
+                                "file_size": "191.91 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASWM1X8AAMGZ_lg1_BiKM2n_mXHGQJ-cEr6YxsAAlETAAKWxdBX4NgZenXGJQQ2BA",
+                                "file_unique_id": "AgADURMAApbF0Fc",
+                                "file_size": "125.68 MB"
+                            },
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASWM1X8AAMHZ_lg4T1s04lywwWyYLsuJz7pDGkAAlITAAKWxdBXxDhSFnsmZTs2BA",
+                                "file_unique_id": "AgADUhMAApbF0Fc",
+                                "file_size": "38.45 MB"
+                            }
+                        }
                     }
                 }
             }
