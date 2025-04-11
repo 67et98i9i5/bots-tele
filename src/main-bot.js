@@ -361,6 +361,7 @@ bot.start(async (ctx) => {
                 parse_mode: "Markdown"
             });
             logActivity(ctx, `✅ Sent Episode ${fileObj.episode_number}`);
+            ctx.reply("Thank you very much for using our bot! We hope that you would continue to use our services. Enjoy your Anime!")
         }
 
         // ✅ Handle 3-arg deep link
@@ -386,6 +387,8 @@ bot.start(async (ctx) => {
                     logActivity(ctx, `❌ Failed to send Episode ${file.ep_number} → ${err.message}`);
                 }
             }
+            logActivity(ctx, `✅ All Episode sent Successfully!`);
+            ctx.reply("Thank you very much for using our bot! We hope that you would continue to use our services. Enjoy your Anime!")
         }
     } catch (error) {
         logActivity(ctx, `❌ Error in bot.start: ${error.message}`);
@@ -734,11 +737,13 @@ bot.use(async (ctx, next) => {
 
 (async () => {
     try {
-        await bot.telegram.deleteWebhook(); // 🧹 Remove active webhook
-        await bot.launch();                 // 🚀 Start bot using polling
-        console.log("✅ Bot is running!");
+      await bot.telegram.deleteWebhook(); // ❌ Unset 
+      await bot.telegram.deleteWebhook(); // ❌ Unset webhook
+      await bot.telegram.deleteWebhook(); // ❌ Unset webhook
+      await bot.telegram.deleteWebhook(); // ❌ Unset webhook
+      await bot.launch(); // ✅ Start bot in polling mode
+      console.log("✅ Bot is running!");
     } catch (error) {
-        console.error("❌ Bot failed to launch:", error);
+      console.error("❌ Bot failed to launch:", error);
     }
-})();
-
+  })();  
