@@ -3288,6 +3288,59 @@
                 }
             }
         }
+      },
+      "Season 3": {
+                "season_id": "s3",
+                "episodes": {
+                    "Episode 1": {
+                        "ep_name": "Episode 1",
+                        "ep_number": "1",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASdHgQtAAMCaAAByc2bK-fc7_nPDpff9M4wM2ZkAAKyGAACdAYIVF7DEn7M6vsjNgQ",
+                                "file_unique_id": "AgADshgAAnQGCFQ",
+                                "file_size": "55.79 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASdHgQtAAMDaAAByf-RpPYLxkEjjONK-0dAy2iVAAKzGAACdAYIVBHn5-K59r96NgQ",
+                                "file_unique_id": "AgADsxgAAnQGCFQ",
+                                "file_size": "195.40 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASdHgQtAAMEaAABykqodTl3diBpMKuKbvx2UnzkAAK2GAACdAYIVOhs2jzoqn89NgQ",
+                                "file_unique_id": "AgADthgAAnQGCFQ",
+                                "file_size": "319.26 MB"
+                            }
+                        }
+                    },
+                    "Episode 2": {
+                        "ep_name": "Episode 2",
+                        "ep_number": "2",
+                        "qualities": {
+                            "360p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASdHgQtAAMFaAABylXW2BkZCVg0MMcBE-LHZj1tAAK3GAACdAYIVB9LX4ShFyAwNgQ",
+                                "file_unique_id": "AgADtxgAAnQGCFQ",
+                                "file_size": "46.30 MB"
+                            },
+                            "720p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASdHgQtAAMGaAABynuS-VR7IL6xJCoBoqtDbqnKAAK4GAACdAYIVCQk8ZAx2kWZNgQ",
+                                "file_unique_id": "AgADuBgAAnQGCFQ",
+                                "file_size": "163.05 MB"
+                            },
+                            "1080p": {
+                                "file_url": "n/a",
+                                "file_id": "BAACAgUAAyEFAASdHgQtAAMHaAAByrkuj5NKVab-zIvEsZr-Oka4AALaFAAC8lsJVGpq3GXgVXnINgQ",
+                                "file_unique_id": "AgAD2hQAAvJbCVQ",
+                                "file_size": "264.62 MB"
+                            }
+                        }
+                    }
+                }
       }
     },
     "Sousou No Frieren": {
