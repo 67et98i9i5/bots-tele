@@ -1,5 +1,12 @@
 {
   "users": {
+    "198471479": {
+      "count": 2,
+      "first_name": "Mehrnaz",
+      "last_name": "F",
+      "first_start_time": "2025-05-23T18:12:50.963Z",
+      "last_start_time": "2025-05-23T18:13:14.365Z"
+    },
     "254284821": {
       "count": 1,
       "first_name": "حیدر",
@@ -139,6 +146,13 @@
       "last_name": "Sakhare",
       "first_start_time": "2025-04-17T19:59:09.831Z",
       "last_start_time": "2025-04-17T19:59:09.815Z"
+    },
+    "794590399": {
+      "count": 4,
+      "first_name": "Hemanth",
+      "last_name": "Challagulla",
+      "first_start_time": "2025-05-31T18:02:45.859Z",
+      "last_start_time": "2025-05-31T18:03:42.746Z"
     },
     "804983554": {
       "count": 1,
@@ -309,11 +323,11 @@
       "last_start_time": "2025-04-04T21:28:10.115Z"
     },
     "1005817706": {
-      "count": 1,
+      "count": 2,
       "first_name": "anjali",
       "last_name": "",
       "first_start_time": "2025-04-04T17:44:16.590Z",
-      "last_start_time": "2025-04-04T17:44:16.590Z"
+      "last_start_time": "2025-05-23T18:06:42.516Z"
     },
     "1022691192": {
       "count": 1,
@@ -491,11 +505,11 @@
       "last_start_time": "2025-04-19T16:34:11.736Z"
     },
     "1177617079": {
-      "count": 1,
+      "count": 2,
       "first_name": "Usha",
       "last_name": "Nandhini",
       "first_start_time": "2025-05-16T02:18:22.882Z",
-      "last_start_time": "2025-05-16T02:18:22.882Z"
+      "last_start_time": "2025-05-23T18:02:36.771Z"
     },
     "1180595765": {
       "count": 1,
@@ -819,11 +833,11 @@
       "last_start_time": "2025-05-03T19:40:30.465Z"
     },
     "1387890605": {
-      "count": 1,
+      "count": 2,
       "first_name": "Rupam",
       "last_name": "",
       "first_start_time": "2025-04-14T18:02:00.106Z",
-      "last_start_time": "2025-04-14T18:02:00.101Z"
+      "last_start_time": "2025-06-03T16:36:14.868Z"
     },
     "1388130808": {
       "count": 1,
@@ -1056,6 +1070,13 @@
       "first_start_time": "2025-04-05T16:06:01.753Z",
       "last_start_time": "2025-04-05T16:06:01.752Z"
     },
+    "1545658261": {
+      "count": 1,
+      "first_name": "Vishrutha",
+      "last_name": "Patel",
+      "first_start_time": "2025-05-31T17:32:06.531Z",
+      "last_start_time": "2025-05-31T17:32:06.534Z"
+    },
     "1548803356": {
       "count": 1,
       "first_name": "🦋",
@@ -1071,11 +1092,11 @@
       "last_start_time": "2025-04-28T13:52:08.132Z"
     },
     "1569390377": {
-      "count": 1,
+      "count": 3,
       "first_name": "Anmol Pandey",
       "last_name": "○-○⚡",
       "first_start_time": "2025-04-27T14:05:04.359Z",
-      "last_start_time": "2025-04-27T14:05:04.359Z"
+      "last_start_time": "2025-05-23T18:23:36.641Z"
     },
     "1583584302": {
       "count": 1,
@@ -1083,6 +1104,20 @@
       "last_name": "Jnr",
       "first_start_time": "2025-04-04T22:44:19.430Z",
       "last_start_time": "2025-04-04T22:44:19.430Z"
+    },
+    "1584589601": {
+      "count": 1,
+      "first_name": "Enchancer",
+      "last_name": "Biakliana",
+      "first_start_time": "2025-05-30T18:01:14.486Z",
+      "last_start_time": "2025-05-30T18:01:14.486Z"
+    },
+    "1585692009": {
+      "count": 2,
+      "first_name": "Jayasree",
+      "last_name": "Jaya",
+      "first_start_time": "2025-05-30T17:55:35.399Z",
+      "last_start_time": "2025-05-30T17:55:59.111Z"
     },
     "1585702673": {
       "count": 1,
@@ -1273,6 +1308,13 @@
       "first_start_time": "2025-04-30T09:09:30.910Z",
       "last_start_time": "2025-04-30T09:09:30.903Z"
     },
+    "1720804843": {
+      "count": 1,
+      "first_name": "Lavanya",
+      "last_name": "Baid",
+      "first_start_time": "2025-05-23T18:22:36.463Z",
+      "last_start_time": "2025-05-23T18:22:36.466Z"
+    },
     "1721548877": {
       "count": 1,
       "first_name": "Nibedita",
@@ -1286,6 +1328,12 @@
       "last_name": "Pro",
       "first_start_time": "2025-04-20T05:18:04.724Z",
       "last_start_time": "2025-04-20T05:18:12.029Z"
+    },
+    "1729428490": {
+      "count": 1,
+      "first_name": "Isagi",
+      "first_start_time": "2025-05-23T18:18:04.432Z",
+      "last_start_time": "2025-05-23T18:18:04.432Z"
     },
     "1739837138": {
       "count": 1,
@@ -1358,11 +1406,11 @@
       "last_start_time": "2025-05-12T04:49:58.000Z"
     },
     "1854896249": {
-      "count": 1,
+      "count": 3,
       "first_name": "Glamarous",
       "last_name": "Twinkle",
       "first_start_time": "2025-05-11T08:12:39.609Z",
-      "last_start_time": "2025-05-11T08:12:39.608Z"
+      "last_start_time": "2025-06-03T16:08:01.878Z"
     },
     "1855015669": {
       "count": 1,
@@ -1379,11 +1427,11 @@
       "last_start_time": "2025-04-08T15:28:34.038Z"
     },
     "1880141643": {
-      "count": 1,
+      "count": 2,
       "first_name": "EMMANUEL",
       "last_name": "JOSEPH",
       "first_start_time": "2025-05-11T19:53:55.254Z",
-      "last_start_time": "2025-05-11T19:53:55.254Z"
+      "last_start_time": "2025-05-23T18:02:58.471Z"
     },
     "1886381124": {
       "count": 1,
@@ -1456,11 +1504,11 @@
       "last_start_time": "2025-04-05T05:38:18.245Z"
     },
     "1927560401": {
-      "count": 2,
+      "count": 3,
       "first_name": "Neelangshu",
       "last_name": "Bose",
       "first_start_time": "2025-04-18T09:41:32.899Z",
-      "last_start_time": "2025-04-19T10:41:41.649Z"
+      "last_start_time": "2025-05-31T18:08:51.120Z"
     },
     "1937474949": {
       "count": 1,
@@ -1631,11 +1679,11 @@
       "last_start_time": "2025-04-27T13:26:38.587Z"
     },
     "7020664469": {
-      "count": 15,
+      "count": 25,
       "first_name": "Noasaga",
       "last_name": "Project",
       "first_start_time": "2025-04-04T10:45:13.595Z",
-      "last_start_time": "2025-05-18T16:13:47.521Z"
+      "last_start_time": "2025-06-03T15:07:22.026Z"
     },
     "7360251871": {
       "count": 1,
@@ -1687,11 +1735,11 @@
       "last_start_time": "2025-04-04T16:39:06.476Z"
     },
     "6917997629": {
-      "count": 1,
+      "count": 2,
       "first_name": "Sofiya",
       "last_name": "Azmer",
       "first_start_time": "2025-04-04T17:43:56.887Z",
-      "last_start_time": "2025-04-04T17:43:56.886Z"
+      "last_start_time": "2025-05-30T17:55:23.360Z"
     },
     "7430993994": {
       "count": 1,
@@ -1736,11 +1784,11 @@
       "last_start_time": "2025-04-04T17:57:32.566Z"
     },
     "7765635998": {
-      "count": 1,
+      "count": 2,
       "first_name": "Animegirl",
       "last_name": "",
       "first_start_time": "2025-04-04T18:09:17.960Z",
-      "last_start_time": "2025-04-04T18:09:17.960Z"
+      "last_start_time": "2025-05-23T18:14:26.688Z"
     },
     "7717089549": {
       "count": 1,
@@ -1764,11 +1812,11 @@
       "last_start_time": "2025-04-04T18:38:35.822Z"
     },
     "5834069851": {
-      "count": 1,
+      "count": 5,
       "first_name": "Tanu",
       "last_name": "Bhardwaj",
       "first_start_time": "2025-04-04T18:46:55.272Z",
-      "last_start_time": "2025-04-04T18:46:55.272Z"
+      "last_start_time": "2025-05-23T18:17:44.543Z"
     },
     "7899003135": {
       "count": 1,
@@ -1925,11 +1973,11 @@
       "last_start_time": "2025-04-05T12:02:51.237Z"
     },
     "7173015512": {
-      "count": 1,
+      "count": 2,
       "first_name": "Nozima",
       "last_name": "Normurodova",
       "first_start_time": "2025-04-05T13:38:45.480Z",
-      "last_start_time": "2025-04-05T13:38:45.480Z"
+      "last_start_time": "2025-05-23T18:22:50.854Z"
     },
     "6641514527": {
       "count": 1,
@@ -1939,11 +1987,11 @@
       "last_start_time": "2025-04-05T14:49:14.653Z"
     },
     "5322225579": {
-      "count": 1,
+      "count": 2,
       "first_name": "K",
       "last_name": "V",
       "first_start_time": "2025-04-05T18:21:09.599Z",
-      "last_start_time": "2025-04-05T18:21:09.596Z"
+      "last_start_time": "2025-05-30T18:00:58.991Z"
     },
     "7624476926": {
       "count": 1,
@@ -1953,11 +2001,11 @@
       "last_start_time": "2025-04-05T18:39:03.475Z"
     },
     "6329385140": {
-      "count": 1,
+      "count": 2,
       "first_name": "Ayushi",
       "last_name": "Saroj",
       "first_start_time": "2025-04-05T20:18:29.821Z",
-      "last_start_time": "2025-04-05T20:18:29.820Z"
+      "last_start_time": "2025-05-23T18:34:49.737Z"
     },
     "6285553659": {
       "count": 1,
@@ -1974,11 +2022,11 @@
       "last_start_time": "2025-04-05T21:51:02.745Z"
     },
     "5392343846": {
-      "count": 1,
+      "count": 2,
       "first_name": "UNKNOWN",
       "last_name": "FF",
       "first_start_time": "2025-04-05T22:42:52.259Z",
-      "last_start_time": "2025-04-05T22:42:52.258Z"
+      "last_start_time": "2025-05-23T18:16:10.345Z"
     },
     "5048659294": {
       "count": 1,
@@ -2751,11 +2799,11 @@
       "last_start_time": "2025-04-15T12:34:23.735Z"
     },
     "6960854127": {
-      "count": 1,
+      "count": 2,
       "first_name": "Khushi",
       "last_name": "Nanoma",
       "first_start_time": "2025-04-15T15:40:51.703Z",
-      "last_start_time": "2025-04-15T15:40:51.689Z"
+      "last_start_time": "2025-05-30T17:55:09.046Z"
     },
     "5084646678": {
       "count": 1,
@@ -2982,11 +3030,11 @@
       "last_start_time": "2025-04-18T14:53:21.903Z"
     },
     "6701550630": {
-      "count": 1,
+      "count": 3,
       "first_name": "pop ᶻz..",
       "last_name": "",
       "first_start_time": "2025-04-18T16:15:53.697Z",
-      "last_start_time": "2025-04-18T16:15:53.679Z"
+      "last_start_time": "2025-05-30T17:55:14.016Z"
     },
     "6022917329": {
       "count": 1,
@@ -2996,11 +3044,11 @@
       "last_start_time": "2025-04-18T18:10:05.547Z"
     },
     "7830282997": {
-      "count": 1,
+      "count": 2,
       "first_name": "David Rejoice",
       "last_name": "",
       "first_start_time": "2025-04-18T19:01:31.246Z",
-      "last_start_time": "2025-04-18T19:01:31.231Z"
+      "last_start_time": "2025-05-23T18:10:04.001Z"
     },
     "7154022748": {
       "count": 1,
@@ -3437,11 +3485,11 @@
       "last_start_time": "2025-04-25T06:29:16.808Z"
     },
     "6936096383": {
-      "count": 1,
+      "count": 4,
       "first_name": "Lakshmi",
       "last_name": "Rai",
       "first_start_time": "2025-04-25T07:14:31.692Z",
-      "last_start_time": "2025-04-25T07:14:31.692Z"
+      "last_start_time": "2025-05-23T18:07:14.043Z"
     },
     "6555517815": {
       "count": 1,
@@ -3507,11 +3555,11 @@
       "last_start_time": "2025-04-26T06:07:27.331Z"
     },
     "6222998570": {
-      "count": 1,
+      "count": 4,
       "first_name": "Sadre",
       "last_name": "Alam",
       "first_start_time": "2025-04-26T06:22:52.161Z",
-      "last_start_time": "2025-04-26T06:22:52.161Z"
+      "last_start_time": "2025-05-23T18:28:10.846Z"
     },
     "6570220151": {
       "count": 1,
@@ -3612,11 +3660,11 @@
       "last_start_time": "2025-04-28T04:36:01.597Z"
     },
     "8018831057": {
-      "count": 1,
+      "count": 2,
       "first_name": "Prince",
       "last_name": "Savanur",
       "first_start_time": "2025-04-28T06:01:51.880Z",
-      "last_start_time": "2025-04-28T06:01:51.879Z"
+      "last_start_time": "2025-05-23T17:56:35.460Z"
     },
     "6803723340": {
       "count": 1,
@@ -3899,11 +3947,11 @@
       "last_start_time": "2025-05-02T15:46:49.275Z"
     },
     "6127856018": {
-      "count": 8,
+      "count": 10,
       "first_name": "ThatOneCatWithAHat",
       "last_name": "",
       "first_start_time": "2025-05-02T16:50:40.036Z",
-      "last_start_time": "2025-05-18T15:21:53.940Z"
+      "last_start_time": "2025-05-23T18:00:41.931Z"
     },
     "6071483902": {
       "count": 1,
@@ -4186,11 +4234,11 @@
       "last_start_time": "2025-05-06T07:28:49.186Z"
     },
     "6371527138": {
-      "count": 1,
+      "count": 3,
       "first_name": "Alia",
       "last_name": "Afsal",
       "first_start_time": "2025-05-06T10:11:52.634Z",
-      "last_start_time": "2025-05-06T10:11:52.633Z"
+      "last_start_time": "2025-06-03T15:19:10.391Z"
     },
     "5805671070": {
       "count": 1,
@@ -4396,11 +4444,11 @@
       "last_start_time": "2025-05-10T09:31:59.521Z"
     },
     "5953299429": {
-      "count": 1,
+      "count": 3,
       "first_name": "◇",
       "last_name": "",
       "first_start_time": "2025-05-10T09:45:32.104Z",
-      "last_start_time": "2025-05-10T09:45:32.103Z"
+      "last_start_time": "2025-05-23T18:16:51.876Z"
     },
     "6964747302": {
       "count": 1,
@@ -4781,11 +4829,11 @@
       "last_start_time": "2025-05-15T15:47:08.689Z"
     },
     "7442933155": {
-      "count": 1,
+      "count": 2,
       "first_name": "Mohammed",
       "last_name": "Aflah",
       "first_start_time": "2025-05-15T16:03:00.130Z",
-      "last_start_time": "2025-05-15T16:03:00.129Z"
+      "last_start_time": "2025-05-23T18:28:06.851Z"
     },
     "6614906231": {
       "count": 1,
@@ -4834,6 +4882,88 @@
       "first_name": "Priya",
       "first_start_time": "2025-05-18T15:39:32.734Z",
       "last_start_time": "2025-05-18T15:39:32.734Z"
+    },
+    "6127812512": {
+      "count": 2,
+      "first_name": "chashmitha",
+      "last_name": "Deachamma",
+      "first_start_time": "2025-05-23T18:03:32.088Z",
+      "last_start_time": "2025-05-23T18:04:38.777Z"
+    },
+    "7121097337": {
+      "count": 1,
+      "first_name": "Sana",
+      "first_start_time": "2025-05-23T18:04:03.676Z",
+      "last_start_time": "2025-05-23T18:04:03.676Z"
+    },
+    "6455929860": {
+      "count": 2,
+      "first_name": "roshni",
+      "first_start_time": "2025-05-23T18:19:26.377Z",
+      "last_start_time": "2025-05-30T17:55:18.434Z"
+    },
+    "5234510471": {
+      "count": 2,
+      "first_name": "SamVya",
+      "last_name": "Sayyad",
+      "first_start_time": "2025-05-30T17:51:39.063Z",
+      "last_start_time": "2025-05-30T17:52:01.368Z"
+    },
+    "7353528367": {
+      "count": 1,
+      "first_name": "Sano",
+      "last_name": "C",
+      "first_start_time": "2025-05-31T17:29:03.301Z",
+      "last_start_time": "2025-05-31T17:29:03.303Z"
+    },
+    "6111629477": {
+      "count": 5,
+      "first_name": "Saloni",
+      "last_name": "❤️",
+      "first_start_time": "2025-06-03T15:13:49.662Z",
+      "last_start_time": "2025-06-03T15:37:57.051Z"
+    },
+    "5302426307": {
+      "count": 1,
+      "first_name": "Devi",
+      "last_name": "Saschan",
+      "first_start_time": "2025-06-03T15:14:18.020Z",
+      "last_start_time": "2025-06-03T15:14:18.020Z"
+    },
+    "7903674396": {
+      "count": 4,
+      "first_name": "Tobiloba",
+      "last_name": "Akintan",
+      "first_start_time": "2025-06-03T15:20:06.277Z",
+      "last_start_time": "2025-06-03T15:32:54.563Z"
+    },
+    "7260743078": {
+      "count": 2,
+      "first_name": "Nirali",
+      "last_name": "Mevada",
+      "first_start_time": "2025-06-03T15:26:06.547Z",
+      "last_start_time": "2025-06-03T15:30:22.411Z"
+    },
+    "6173826565": {
+      "count": 1,
+      "first_name": "JENI.....❣️",
+      "last_name": ":)",
+      "first_start_time": "2025-06-03T15:28:50.022Z",
+      "last_start_time": "2025-06-03T15:28:50.022Z"
+    },
+    "8160075222": {
+      "count": 3,
+      "first_name": "Unknown",
+      "last_name": "On nanako",
+      "first_start_time": "2025-06-03T15:44:28.013Z",
+      "last_start_time": "2025-06-03T16:55:04.886Z"
+    },
+    "8060866396": {
+      "count": 1,
+      "first_name": "Abhishek",
+      "last_name": "Sah",
+      "first_start_time": "2025-06-03T15:48:16.782Z",
+      "last_start_time": "2025-06-03T15:48:16.782Z"
     }
   },
   "animeSelections": {
@@ -5465,7 +5595,8 @@
     },
     "1927560401": {
       "Kusuriya no Hitorigoto": 1,
-      "Enen no Shouboutai: San no Shou": 1
+      "Enen no Shouboutai: San no Shou": 1,
+      "Fire Force": 1
     },
     "1937474949": {
       "Kusuriya no Hitorigoto": 1
@@ -5548,7 +5679,9 @@
       "Enen no Shouboutai: San no Shou": 1,
       "Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.": 1,
       "Pon no Michi": 1,
-      "Ore dake Level Up na Ken": 1
+      "Ore dake Level Up na Ken": 1,
+      "The Apothecary Diaries": 1,
+      "Chainsaw man": 1
     },
     "7360251871": {
       "Kusuriya no Hitorigoto": 1
@@ -6343,7 +6476,8 @@
       "Death Note": 1
     },
     "6936096383": {
-      "Kusuriya no Hitorigoto": 1
+      "Kusuriya no Hitorigoto": 1,
+      "The Apothecary Diaries": 1
     },
     "6555517815": {
       "Kusuriya no Hitorigoto": 1
@@ -6552,7 +6686,8 @@
     "6127856018": {
       "Ore dake Level Up na Ken": 1,
       "Kill la Kill": 1,
-      "Fire Force": 1
+      "Fire Force": 1,
+      "The Apothecary Diaries": 2
     },
     "6071483902": {
       "Kusuriya no Hitorigoto": 1
@@ -7160,7 +7295,11 @@
     "1919947212": {},
     "1920118529": {},
     "1925562001": {},
-    "1927560401": {},
+    "1927560401": {
+      "Fire Force": {
+        "Season 3": 1
+      }
+    },
     "1937474949": {},
     "1939651158": {},
     "1949346242": {},
@@ -7184,7 +7323,14 @@
     "2131664238": {},
     "2132058311": {},
     "2135664913": {},
-    "7020664469": {},
+    "7020664469": {
+      "The Apothecary Diaries": {
+        "Season 2": 1
+      },
+      "Chainsaw man": {
+        "Season 1": 1
+      }
+    },
     "7360251871": {},
     "6554696636": {},
     "6963624173": {},
@@ -7442,7 +7588,11 @@
     "8159903828": {},
     "5684904557": {},
     "6349154056": {},
-    "6936096383": {},
+    "6936096383": {
+      "The Apothecary Diaries": {
+        "Season 2": 1
+      }
+    },
     "6555517815": {},
     "5173969049": {},
     "5546701084": {},
@@ -7511,6 +7661,9 @@
     "6127856018": {
       "Fire Force": {
         "Season 1": 1
+      },
+      "The Apothecary Diaries": {
+        "Season 2": 2
       }
     },
     "6071483902": {},
@@ -7877,7 +8030,13 @@
     "2131664238": {},
     "2132058311": {},
     "2135664913": {},
-    "7020664469": {},
+    "7020664469": {
+      "Chainsaw man": {
+        "Season 1": {
+          "Episode 9": 1
+        }
+      }
+    },
     "7360251871": {},
     "6554696636": {},
     "6963624173": {},
@@ -8135,7 +8294,13 @@
     "8159903828": {},
     "5684904557": {},
     "6349154056": {},
-    "6936096383": {},
+    "6936096383": {
+      "The Apothecary Diaries": {
+        "Season 2": {
+          "Episode 19": 1
+        }
+      }
+    },
     "6555517815": {},
     "5173969049": {},
     "5546701084": {},
@@ -8208,6 +8373,11 @@
           "Episode 20": 0,
           "Episode 21": 1,
           "Episode 22": 1
+        }
+      },
+      "The Apothecary Diaries": {
+        "Season 2": {
+          "Episode 19": 1
         }
       }
     },
@@ -8575,7 +8745,13 @@
     "2131664238": {},
     "2132058311": {},
     "2135664913": {},
-    "7020664469": {},
+    "7020664469": {
+      "Chainsaw man": {
+        "Season 1": {
+          "1080p": 1
+        }
+      }
+    },
     "7360251871": {},
     "6554696636": {},
     "6963624173": {},
@@ -8833,7 +9009,13 @@
     "8159903828": {},
     "5684904557": {},
     "6349154056": {},
-    "6936096383": {},
+    "6936096383": {
+      "The Apothecary Diaries": {
+        "Season 2": {
+          "1080p": 1
+        }
+      }
+    },
     "6555517815": {},
     "5173969049": {},
     "5546701084": {},
@@ -8903,6 +9085,11 @@
       "Fire Force": {
         "Season 1": {
           "1080p": 1
+        }
+      },
+      "The Apothecary Diaries": {
+        "Season 2": {
+          "360p": 1
         }
       }
     },
@@ -9039,5 +9226,9 @@
     "7059300503": {},
     "6486046914": {}
   },
-  "botExitLog": []
+  "botExitLog": [
+    {
+      "exitTime": "2025-05-31T17:33:54.576Z"
+    }
+  ]
 }

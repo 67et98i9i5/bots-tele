@@ -1,10 +1,10 @@
 const { Telegraf, Markup } = require("telegraf");
 const fs = require("fs");
 
-const bot = new Telegraf("8080886112:AAEi4A5SBK4RG796gvi-oTWMZqFvCGvm3rI");
+const bot = new Telegraf("");
 
 // file to save channel ID
-const CHANNELS_FILE = "../../data/channels.json";
+const CHANNELS_FILE = "data/channels.json";
 let botData = fs.existsSync(CHANNELS_FILE)
   ? JSON.parse(fs.readFileSync(CHANNELS_FILE))
   : { channelId: null };

@@ -2,21 +2,36 @@ const { Telegraf } = require('telegraf');
 const fs = require('fs');
 const path = require('path');
 
+const ADMIN_IDS = [7020664469]; // Replace with actual admin Telegram user IDs
+
 // Your bot token
 const bot = new Telegraf('');
 
 let userData = {}; // Store user data temporarily
 
-// Cooldown mechanism (to avoid spamming)
 const delay = require('util').promisify(setTimeout);
+
+function isAdmin(userId) {
+  return ADMIN_IDS.includes(userId);
+}
+
+// Middleware to restrict access to admins only
+bot.use((ctx, next) => {
+  const userId = ctx.from?.id;
+  if (!userId) return; // Ignore updates without user id
+  if (!isAdmin(userId)) {
+    ctx.reply("The bot is in repairing right now please wait for some time!!!");
+    return; // Stop processing further middleware/handlers
+  }
+  return next();
+});
 
 // 📤 Sends message to users from data/userIds.json
 async function sendToUsersFromFile(uploaderId) {
   try {
-    // Load user IDs from the JSON file
-    const filePath = path.join(__dirname, '../data', 'userIds.json');
+    const filePath = path.join(__dirname, '../../data', 'userIds.json');
     const rawData = fs.readFileSync(filePath);
-    const userIds = JSON.parse(rawData); // Direct array of user IDs
+    const userIds = JSON.parse(rawData);
 
     if (userIds.length === 0) {
       console.log("❌ No users found in the file.");
@@ -33,19 +48,17 @@ async function sendToUsersFromFile(uploaderId) {
     let successCount = 0;
     let errorCount = 0;
 
-    // Loop through all user IDs and send the message
     for (let receiverId of userIds) {
       try {
         await bot.telegram.sendPhoto(receiverId, fileId, {
-          caption: messageText, // Use the message text provided by the user
+          caption: messageText,
           reply_markup: {
-            inline_keyboard: [[{ text: buttonText, url: buttonUrl }]], // Button with URL
+            inline_keyboard: [[{ text: buttonText, url: buttonUrl }]],
           },
         });
-
         console.log(`✅ Sent to user: ${receiverId}`);
         successCount++;
-        await delay(1000); // Optional: Add a delay between messages
+        await delay(200);
       } catch (err) {
         console.error(`❌ Failed to send to user ${receiverId}:`, err);
         errorCount++;
@@ -60,12 +73,10 @@ async function sendToUsersFromFile(uploaderId) {
   }
 }
 
-// /start command
 bot.start((ctx) => {
   ctx.reply('Welcome! Upload an image, I’ll send it with a button to users in the file.');
 });
 
-// 📷 Handle photo
 bot.on('photo', async (ctx) => {
   const userId = ctx.from.id;
   const fileId = ctx.message.photo[0].file_id;
@@ -74,11 +85,9 @@ bot.on('photo', async (ctx) => {
   ctx.reply('Got the image! Now enter the message text:');
 });
 
-// ✍️ Handle text step-by-step
 bot.on('text', (ctx) => {
   const userId = ctx.from.id;
   const user = userData[userId];
-
   if (!user) return;
 
   if (!user.messageText) {
@@ -90,19 +99,18 @@ bot.on('text', (ctx) => {
   } else if (!user.buttonUrl) {
     user.buttonUrl = ctx.message.text;
 
-    // Preview the message
     const { fileId, messageText, buttonText, buttonUrl } = userData[userId];
     ctx.replyWithPhoto(fileId, {
-      caption: messageText, // Show the user's message text
+      caption: messageText,
       reply_markup: {
-        inline_keyboard: [[{ text: buttonText, url: buttonUrl }]], // Button with URL
+        inline_keyboard: [[{ text: buttonText, url: buttonUrl }]],
       },
     });
     ctx.reply('Type "yes" to confirm and send it to users from the file.');
   } else {
     if (ctx.message.text.toLowerCase() === 'yes') {
       ctx.reply('Sending message...');
-      sendToUsersFromFile(userId); // Sends the message to users from the file
+      sendToUsersFromFile(userId);
       delete userData[userId];
     } else {
       ctx.reply('Cancelled. Upload a new image to start again.');
@@ -111,5 +119,4 @@ bot.on('text', (ctx) => {
   }
 });
 
-// 🚀 Launch bot
 bot.launch().then(() => console.log("Bot started ✅"));
