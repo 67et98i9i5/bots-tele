@@ -1,5 +1,6 @@
 const { Markup } = require('telegraf');
 const { updateDeeplink1Log } = require('../helper/deeplinklogger');
+const { getAnimeTitle } = require('../helper/titleHandler');
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -16,8 +17,23 @@ module.exports = async function handleDeeplink1({ ctx, animeCode, seasonId, epis
     return ctx.reply('❌ Anime not found.');
   }
 
-  const [animeTitle, animeData] = animeEntry;
-  const season = animeData.content[`Season ${seasonId.replace('s', '')}`];
+  const [, animeData] = animeEntry;
+
+  const seasonKey = Object.keys(animeData.content).find(key => {
+    const normalizedKey = key.toLowerCase().replace(/\s|-/g, '');
+    const normalizedInput = seasonId.toLowerCase().replace(/\s|-/g, '');
+
+    if (normalizedKey === normalizedInput) return true;
+    if (normalizedKey === 'season' + normalizedInput.replace(/^s/, '')) return true;
+    return false;
+  });
+
+  if (!seasonKey) {
+    return ctx.reply('❌ Season not found.');
+  }
+
+  const season = animeData.content[seasonKey];
+
   if (!season) {
     return ctx.reply('❌ Season not found.');
   }
@@ -32,8 +48,10 @@ module.exports = async function handleDeeplink1({ ctx, animeCode, seasonId, epis
     return ctx.reply(`❌ Quality "${quality}" not available.`);
   }
 
+  const title = getAnimeTitle(animeCode, seasonId) || 'Unknown Title';
+
   const caption = `
-🎬 *${animeTitle}* — Season ${seasonId.replace('s', '')}, Episode ${episodeNum}
+🎬 *${title}* — Episode ${episodeNum}
 📥 Quality: *${quality}*
 💾 ${qualityInfo.file_size}
 🔗 [Episode Link](${episode.episode_link})

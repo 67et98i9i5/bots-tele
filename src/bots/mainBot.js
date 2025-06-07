@@ -91,12 +91,26 @@ bot.action(/^quality_(.+)_(.+)$/, async (ctx) => {
   const [, animeName, seasonName] = ctx.match;
   const userId = String(ctx.from.id);
   const episodes = getSelectedEpisodes(userId);
-
   if (episodes.length === 0) return ctx.reply('❌ No episodes selected.');
 
-  const qualityButtons = ['1080p', '720p', '360p'].map(q =>
-    [Markup.button.callback(q, `send_${animeName}_${seasonName}_${q}`)]
-  );
+  const animeData = data.anime_list[animeName]?.content[seasonName]?.episodes;
+  if (!animeData) return ctx.reply('❌ Episode data not found.');
+
+  const availableQualities = new Set();
+
+  episodes.forEach(ep => {
+    const epData = animeData[ep];
+    if (epData && epData.qualities) {
+      Object.keys(epData.qualities).forEach(q => {
+        if (epData.qualities[q]?.file_id) availableQualities.add(q);
+      });
+    }
+  });
+
+  if (availableQualities.size === 0) return ctx.reply('❌ No available qualities for selected episodes.');
+
+  const qualityButtons = [...availableQualities].sort((a, b) => parseInt(b) - parseInt(a))
+    .map(q => [Markup.button.callback(q, `send_${animeName}_${seasonName}_${q}`)]);
 
   await ctx.editMessageText('📥 Choose a quality:', Markup.inlineKeyboard(qualityButtons));
 });

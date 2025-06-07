@@ -1,8 +1,9 @@
+const { updateDeeplink3Log } = require('../helper/deeplinklogger');
+const { getAnimeTitle } = require('../helper/titleHandler');
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
-
-const { updateDeeplink3Log } = require('../helper/deeplinklogger');
 
 module.exports = async function handleDeeplink3({ ctx, animeCode, seasonId, quality, data }) {
   const userId = String(ctx.from.id);
@@ -15,8 +16,23 @@ module.exports = async function handleDeeplink3({ ctx, animeCode, seasonId, qual
     return ctx.reply('❌ Anime not found.');
   }
 
-  const [animeTitle, animeData] = animeEntry;
-  const season = animeData.content[`Season ${seasonId.replace('s', '')}`];
+  const [, animeData] = animeEntry;
+
+  const seasonKey = Object.keys(animeData.content).find(key => {
+    const normalizedKey = key.toLowerCase().replace(/\s|-/g, '');
+    const normalizedInput = seasonId.toLowerCase().replace(/\s|-/g, '');
+
+    if (normalizedKey === normalizedInput) return true;
+    if (normalizedKey === 'season' + normalizedInput.replace(/^s/, '')) return true;
+    return false;
+  });
+
+  if (!seasonKey) {
+    return ctx.reply('❌ Season not found.');
+  }
+
+  const season = animeData.content[seasonKey];
+
   if (!season) {
     return ctx.reply('❌ Season not found.');
   }
@@ -29,6 +45,8 @@ module.exports = async function handleDeeplink3({ ctx, animeCode, seasonId, qual
     return numA - numB;
   });
 
+  const title = getAnimeTitle(animeCode, seasonId) || 'Unknown Title';
+
   let sentCount = 0;
 
   for (const [epName, episode] of episodeEntries) {
@@ -36,7 +54,7 @@ module.exports = async function handleDeeplink3({ ctx, animeCode, seasonId, qual
     if (!q) continue;
 
     const caption = `
-🎬 *${animeTitle}* — ${epName}
+🎬 *${title}* — ${epName}
 📥 Quality: *${quality}*
 💾 ${q.file_size}
 🔗 [Episode Link](${episode.episode_link})
