@@ -12099,622 +12099,650 @@
           "trailer_url": "https://www.youtube.com/watch?v=3BYutu3Pf_0",
           "season_id": "s2",
           "episodes": {
-            "Episode 1": {
-              "ep_name": "Episode 1",
-              "ep_number": "1",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7tGhADrq5iZf2vE8yGrhre8nLzYzbAAK_HgACH1kJV4u9B8PShxH1NgQ",
-                  "file_unique_id": "AgADvx4AAh9ZCVc",
-                  "file_size": "37.73 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7zGhAH4ZMJTBdy2Epix2a6fji38WVAALAHgACH1kJVyucLcGZ8CEBNgQ",
-                  "file_unique_id": "AgADwB4AAh9ZCVc",
-                  "file_size": "100.79 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7hmhAB8xjvRZkhDTQMWfvstD4RvIMAALBHgACH1kJV-YPAi-Dus2TNgQ",
-                  "file_unique_id": "AgADwR4AAh9ZCVc",
-                  "file_size": "153.18 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_1"
-            },
-            "Episode 2": {
-              "ep_name": "Episode 2",
-              "ep_number": "2",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7tWhADrsYMRxcBj4Ps7fU2ByXD7UJAALCHgACH1kJV5DLEEhWX3O6NgQ",
-                  "file_unique_id": "AgADwh4AAh9ZCVc",
-                  "file_size": "35.69 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7zWhAH4chut6WMdBnSLRbQQ4_PzSVAALDHgACH1kJV8jdn9b1I7dYNgQ",
-                  "file_unique_id": "AgADwx4AAh9ZCVc",
-                  "file_size": "95.62 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7h2hAB83B2JfxzMebBmH3zuFjX1auAALFHgACH1kJVxWeabm_GqyNNgQ",
-                  "file_unique_id": "AgADxR4AAh9ZCVc",
-                  "file_size": "142.35 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_2"
-            },
-            "Episode 3": {
-              "ep_name": "Episode 3",
-              "ep_number": "3",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7tmhADruFQgABnvX2jlxTGpiDfZ7EGAACxh4AAh9ZCVfkiXw7S3jzozYE",
-                  "file_unique_id": "AgADxh4AAh9ZCVc",
-                  "file_size": "34.50 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7zmhAH4hdr-BV2tzP3vy_eb8-086WAALHHgACH1kJV4MIkqtF5g2INgQ",
-                  "file_unique_id": "AgADxx4AAh9ZCVc",
-                  "file_size": "92.07 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7iGhAB87Iqmb9EHuuo_Vo28fnI9TBAALIHgACH1kJV_oz7vBiXiwRNgQ",
-                  "file_unique_id": "AgADyB4AAh9ZCVc",
-                  "file_size": "134.96 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_3"
-            },
-            "Episode 4": {
-              "ep_name": "Episode 4",
-              "ep_number": "4",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7t2hADrw6fWFRH4vPNTsUnzGWnDy-AALJHgACH1kJVwlyO85n4_8DNgQ",
-                  "file_unique_id": "AgADyR4AAh9ZCVc",
-                  "file_size": "35.38 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7z2hAH4kGmXO_9moyeXbZsZaIWOlbAALKHgACH1kJV9R7glVg0PDrNgQ",
-                  "file_unique_id": "AgADyh4AAh9ZCVc",
-                  "file_size": "93.79 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7iWhAB8-tEQ2zyOpBb7035_KbyqnqAALLHgACH1kJV8GW953Vgy6UNgQ",
-                  "file_unique_id": "AgADyx4AAh9ZCVc",
-                  "file_size": "141.62 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_4"
-            },
-            "Episode 5": {
-              "ep_name": "Episode 5",
-              "ep_number": "5",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7uGhADr0hUtj_e0mo1b3_SlCqIZLTAALMHgACH1kJV4Fzrh1GhtiwNgQ",
-                  "file_unique_id": "AgADzB4AAh9ZCVc",
-                  "file_size": "40.74 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK70GhAH4mIZKb3IcmJLejnI9_qoj-cAALNHgACH1kJV5itWk8eznjQNgQ",
-                  "file_unique_id": "AgADzR4AAh9ZCVc",
-                  "file_size": "114.81 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7imhAB8-AEJWPX9wIe_ZHN7AUMvHLAALOHgACH1kJV3nm2N0gORVhNgQ",
-                  "file_unique_id": "AgADzh4AAh9ZCVc",
-                  "file_size": "174.22 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_5"
-            },
-            "Episode 6": {
-              "ep_name": "Episode 6",
-              "ep_number": "6",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7uWhADr4_Rru84Ti-ccW7-jh6P1WbAALPHgACH1kJVwRIukEzeoJ2NgQ",
-                  "file_unique_id": "AgADzx4AAh9ZCVc",
-                  "file_size": "36.51 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK70WhAH4o-JI9-75mdhNZ6AeDixZ51AALQHgACH1kJV2OgSwaS8laaNgQ",
-                  "file_unique_id": "AgAD0B4AAh9ZCVc",
-                  "file_size": "99.46 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7i2hAB9BCb53grkkEbO1znAvPYlToAALRHgACH1kJVwXnef0iPxnDNgQ",
-                  "file_unique_id": "AgAD0R4AAh9ZCVc",
-                  "file_size": "144.35 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_6"
-            },
-            "Episode 7": {
-              "ep_name": "Episode 7",
-              "ep_number": "7",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7umhADr79nBOWLqv13kNPsDAU5ki3AALSHgACH1kJV-oonk-wBvadNgQ",
-                  "file_unique_id": "AgAD0h4AAh9ZCVc",
-                  "file_size": "31.80 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK70mhAH4vXayQwGLIBPGBbUiToi2h2AALTHgACH1kJV06U_RYGYrddNgQ",
-                  "file_unique_id": "AgAD0x4AAh9ZCVc",
-                  "file_size": "83.87 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7jGhAB9ETbHFUKGLxfLuZPHqOpeuGAALUHgACH1kJV11Q6ZqhCC-gNgQ",
-                  "file_unique_id": "AgAD1B4AAh9ZCVc",
-                  "file_size": "124.65 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_7"
-            },
-            "Episode 8": {
-              "ep_name": "Episode 8",
-              "ep_number": "8",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7u2hADr-r5BDSRf9eQ32FNo82fcf7AALVHgACH1kJV66Z_1i8AAGp4DYE",
-                  "file_unique_id": "AgAD1R4AAh9ZCVc",
-                  "file_size": "37.27 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK702hAH4uvbAlQCVrgpfuGJxtIjuAUAALWHgACH1kJV0lfoGi_LxS_NgQ",
-                  "file_unique_id": "AgAD1h4AAh9ZCVc",
-                  "file_size": "108.12 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7jWhAB9FaV5QBJg7Rcrimj1H3mNagAALXHgACH1kJV9pQllCyRcubNgQ",
-                  "file_unique_id": "AgAD1x4AAh9ZCVc",
-                  "file_size": "156.85 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_8"
-            },
-            "Episode 9": {
-              "ep_name": "Episode 9",
-              "ep_number": "9",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7vGhADsDpZU-Ia7CnLX4BEOvm-GldAALYHgACH1kJVz5q76IWemx1NgQ",
-                  "file_unique_id": "AgAD2B4AAh9ZCVc",
-                  "file_size": "33.24 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK71GhAH4xVDgG35kU47HY4MJueslcTAALZHgACH1kJV79YvIIbZsgkNgQ",
-                  "file_unique_id": "AgAD2R4AAh9ZCVc",
-                  "file_size": "88.79 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7jmhAB9If3XpGY08w16ytAa9oeSSuAALaHgACH1kJV5wJLM3jYmQkNgQ",
-                  "file_unique_id": "AgAD2h4AAh9ZCVc",
-                  "file_size": "130.67 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_9"
-            },
-            "Episode 10": {
-              "ep_name": "Episode 10",
-              "ep_number": "10",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7vWhADsGRbgVQb7THWdvzQXqj58MpAALbHgACH1kJVyMs_-B3S16uNgQ",
-                  "file_unique_id": "AgAD2x4AAh9ZCVc",
-                  "file_size": "31.15 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK71WhAH41LW8ews1e_uxLxi_fYlp0OAALcHgACH1kJV4klqprc-2dENgQ",
-                  "file_unique_id": "AgAD3B4AAh9ZCVc",
-                  "file_size": "85.40 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7j2hAB9OCoX37SQGeM3ivTrfXSblbAALdHgACH1kJV6naMBS8mpKsNgQ",
-                  "file_unique_id": "AgAD3R4AAh9ZCVc",
-                  "file_size": "121.47 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_10"
-            },
-            "Episode 11": {
-              "ep_name": "Episode 11",
-              "ep_number": "11",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7vmhADsHvH5SkUkHZofHm-dM8CvIiAALeHgACH1kJVx6jsf4lko6CNgQ",
-                  "file_unique_id": "AgAD3h4AAh9ZCVc",
-                  "file_size": "42.41 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK71mhAH46GQUm18OW2QNnfkykatRYfAALfHgACH1kJV0A413J7qIalNgQ",
-                  "file_unique_id": "AgAD3x4AAh9ZCVc",
-                  "file_size": "116.51 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7kGhAB9R2fmETXBG_fNbrSstmEPljAALgHgACH1kJV12nzHmcnEnINgQ",
-                  "file_unique_id": "AgAD4B4AAh9ZCVc",
-                  "file_size": "178.03 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_11"
-            },
-            "Episode 12": {
-              "ep_name": "Episode 12",
-              "ep_number": "12",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7v2hADsKPdvkypQgv3xmtidGbmqkcAAJxFAACDfWBV6KJylSTlCO5NgQ",
-                  "file_unique_id": "AgADcRQAAg31gVc",
-                  "file_size": "33.95 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK712hAH48CGQZq3flcVyaCQLgxsSt4AAJyFAACDfWBVwc8Xityv_wGNgQ",
-                  "file_unique_id": "AgADchQAAg31gVc",
-                  "file_size": "119.06 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7kWhAB9QdW0IN6U3_YXoLksrM-iW_AAJzFAACDfWBV1FhnaIXKoz7NgQ",
-                  "file_unique_id": "AgADcxQAAg31gVc",
-                  "file_size": "191.73 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_12"
-            },
-            "Episode 13": {
-              "ep_name": "Episode 13",
-              "ep_number": "13",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7wGhADsNyN-7U7xFQgNW5kEyMcyVIAAJ1FAACDfWBVxrd4iF5nDz1NgQ",
-                  "file_unique_id": "AgADdRQAAg31gVc",
-                  "file_size": "37.62 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK72GhAH4-L0MpzGRNVgXzytBuPr2mNAAJ2FAACDfWBV4bfO3ZorI3vNgQ",
-                  "file_unique_id": "AgADdhQAAg31gVc",
-                  "file_size": "137.98 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7kmhAB9UsrXipRdjYxS68_7HjGYAkAAJ4FAACDfWBVyMDEgtMvLWYNgQ",
-                  "file_unique_id": "AgADeBQAAg31gVc",
-                  "file_size": "222.83 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_13"
-            },
-            "Episode 14": {
-              "ep_name": "Episode 14",
-              "ep_number": "14",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7wWhADsTLjHvK0euvgQ-GE7FOsPgZAALfFAAC2IshVM1YRQjyaf4mNgQ",
-                  "file_unique_id": "AgAD3xQAAtiLIVQ",
-                  "file_size": "38.45 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK72WhAH5D3cB3Vha4o6ZWBxcgPCmqPAALgFAAC2IshVMikjarsjFE8NgQ",
-                  "file_unique_id": "AgAD4BQAAtiLIVQ",
-                  "file_size": "125.68 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7k2hAB9b3VIl3OtzjDETnpDMd4f8xAALhFAAC2IshVHUdIyYoXOQzNgQ",
-                  "file_unique_id": "AgAD4RQAAtiLIVQ",
-                  "file_size": "191.91 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_14"
-            },
-            "Episode 15": {
-              "ep_name": "Episode 15",
-              "ep_number": "15",
-              "qualities": {
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7lGhAB9ebWYK0ppszqy1yztkS5uGMAAIIFwACJN9gVL9vMKWALVXANgQ",
-                  "file_unique_id": "AgADCBcAAiTfYFQ",
-                  "file_size": "187.40 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7Rmg_scChiIMB4ytiLO_nRekB_DUtAAIJFwACJN9gVFVLV-kNn5B0NgQ",
-                  "file_unique_id": "AgADCRcAAiTfYFQ",
-                  "file_size": "118.80 MB"
-                },
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7wmhADsT61OuLHrv4q75LD3nhyLfMAAIKFwACJN9gVBf4wIqPjf2eNgQ",
-                  "file_unique_id": "AgADChcAAiTfYFQ",
-                  "file_size": "36.45 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_15"
-            },
-            "Episode 16": {
-              "ep_name": "Episode 16",
-              "ep_number": "16",
-              "qualities": {
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7lWhAB9dE42i7AAGcIpbAdFgs2S7itAACDRcAAiTfYFT0Ht_UCp6NhDYE",
-                  "file_unique_id": "AgADDRcAAiTfYFQ",
-                  "file_size": "184.10 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK722hAH5GyzwTdOYzDv3a3TKnUxAQLAAIOFwACJN9gVASPQrggDmLVNgQ",
-                  "file_unique_id": "AgADDhcAAiTfYFQ",
-                  "file_size": "113.69 MB"
-                },
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7w2hADsVz8x0skRjxq3Xp1H7MOTR4AAIPFwACJN9gVEm7o9cGGuVENgQ",
-                  "file_unique_id": "AgADDxcAAiTfYFQ",
-                  "file_size": "32.58 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_16"
-            },
-            "Episode 17": {
-              "ep_name": "Episode 17",
-              "ep_number": "17",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7xGhADsbIbRChIL58jnyLszYR_qk8AAKBFAACFYCpVJVX61AD9d1oNgQ",
-                  "file_unique_id": "AgADgRQAAhWAqVQ",
-                  "file_size": "39.74 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK73GhAH5KibZHxzmzZSDtNFDVtTayVAALzHAACF_yoVDwFmSOx8yYINgQ",
-                  "file_unique_id": "AgAD8xwAAhf8qFQ",
-                  "file_size": "134.76 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7lmhAB9gW23uODOC5-LlX-qfyfsfIAAKCFAACFYCpVNFvaO4sr_HTNgQ",
-                  "file_unique_id": "AgADghQAAhWAqVQ",
-                  "file_size": "212.68 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_17"
-            },
-            "Episode 18": {
-              "ep_name": "Episode 18",
-              "ep_number": "18",
-              "qualities": {
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7l2hAB9mAgJRYo46hbNYE3X69N2HSAAIkFQACqe34VGJFz3Fx-PQNNgQ",
-                  "file_unique_id": "AgADJBUAAqnt-FQ",
-                  "file_size": "198.21 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK73WhAH5N2qy9hbDcj59SVJ3T655ViAAImFQACqe34VBeKuU4pX2F9NgQ",
-                  "file_unique_id": "AgADJhUAAqnt-FQ",
-                  "file_size": "123.01 MB"
-                },
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7xWhADsc4ZUH1a-b3HPSemZwHERSVAAIoFQACqe34VMElxDxTl5WfNgQ",
-                  "file_unique_id": "AgADKBUAAqnt-FQ",
-                  "file_size": "34.60 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_18"
-            },
-            "Episode 19": {
-              "ep_name": "Episode 19",
-              "ep_number": "19",
-              "qualities": {
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7mGhAB9pmAWxyJLSiWu_8jKg6xpKoAAL_FQACjrWRVRZLedLJ2Fk5NgQ",
-                  "file_unique_id": "AgAD_xUAAo61kVU",
-                  "file_size": "70.66 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7gGhAAlC0BxpJYyLeGTotB_mVW5DSAAIBFgACjrWRVdNqwZfWlaUUNgQ",
-                  "file_unique_id": "AgADARYAAo61kVU",
-                  "file_size": "59.96 MB"
-                },
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7x2hADsfR_Oi2u9uf75RYXt-bSTe_AAICFgACjrWRVewuNZzIhvJzNgQ",
-                  "file_unique_id": "AgADAhYAAo61kVU",
-                  "file_size": "35.13 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_19"
-            },
-            "Episode 20": {
-              "ep_name": "Episode 20",
-              "ep_number": "20",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7RGg_sAqPx3i3crgAAR4uQdrr-A1-cwACOxsAAsRz0VVbmi6IAz--ljYE",
-                  "file_unique_id": "AgADOxsAAsRz0VU",
-                  "file_size": "40.55 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK732hAH5TpOTD4-B-reT7p7DE1T6QbAAI8GwACxHPRVQJoQ3OWb2-RNgQ",
-                  "file_unique_id": "AgADPBsAAsRz0VU",
-                  "file_size": "103.93 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAxkDAAK7mWhAB9omQYBiW-Hyfwa__EfFk0hwAAI9GwACxHPRVWcVPqP2HsRYNgQ",
-                  "file_unique_id": "AgADPRsAAsRz0VU",
-                  "file_size": "155.96 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_20"
-            },
-            "Episode 21": {
-              "ep_name": "Episode 21",
-              "ep_number": "21",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAyEFAASL1Ou-AANGaEM0oxHiCVqd0jDJfzr4Fu2a-TAAAiUYAAL5vRhWzLmMNRFgNCI2BA",
-                  "file_unique_id": "AgADJRgAAvm9GFY",
-                  "file_size": "39.90 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAyEFAASL1Ou-AANHaEM0ucjhBzEzA7a728me7ok_sD8AAiYYAAL5vRhWXz60qLFNiRU2BA",
-                  "file_unique_id": "AgADJhgAAvm9GFY",
-                  "file_size": "102.33 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAyEFAASL1Ou-AANIaEM02nCcru4i65NUHoDP8DYD-k0AAicYAAL5vRhWJUdv3FRFbfg2BA",
-                  "file_unique_id": "AgADJxgAAvm9GFY",
-                  "file_size": "153.12 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_21"
-            },
-            "Episode 22": {
-              "ep_name": "Episode 22",
-              "ep_number": "22",
-              "qualities": {
-                "360p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAyEFAASL1Ou-AANJaExafBeqi-K9bd3rxiatLwWtHBsAAiQZAAKhtWFW_HWrp6fOTww2BA",
-                  "file_unique_id": "AgADJBkAAqG1YVY",
-                  "file_size": "30.93 MB"
-                },
-                "720p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAyEFAASL1Ou-AANKaExaj5Z0hGzunRJh6KU3tz1sHZ4AAiYZAAKhtWFWcQABCYztsizLNgQ",
-                  "file_unique_id": "AgADJhkAAqG1YVY",
-                  "file_size": "66.55 MB"
-                },
-                "1080p": {
-                  "file_url": "n/a",
-                  "file_id": "BAACAgUAAyEFAASL1Ou-AANLaExaqDJTPw6BumCzCSwoUoMPAAFZAAInGQACobVhVi-50SU7bXV3NgQ",
-                  "file_unique_id": "AgADJxkAAqG1YVY",
-                  "file_size": "106.34 MB"
-                }
-              },
-              "duration": "",
-              "status": "",
-              "aired_on": "",
-              "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_22"
-            }
+                        "Episode 1": {
+                            "ep_name": "Episode 1",
+                            "ep_number": "1",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7tGhADrq5iZf2vE8yGrhre8nLzYzbAAK_HgACH1kJV4u9B8PShxH1NgQ",
+                                    "file_unique_id": "AgADvx4AAh9ZCVc",
+                                    "file_size": "37.73 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7zGhAH4ZMJTBdy2Epix2a6fji38WVAALAHgACH1kJVyucLcGZ8CEBNgQ",
+                                    "file_unique_id": "AgADwB4AAh9ZCVc",
+                                    "file_size": "100.79 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7hmhAB8xjvRZkhDTQMWfvstD4RvIMAALBHgACH1kJV-YPAi-Dus2TNgQ",
+                                    "file_unique_id": "AgADwR4AAh9ZCVc",
+                                    "file_size": "153.18 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_1"
+                        },
+                        "Episode 2": {
+                            "ep_name": "Episode 2",
+                            "ep_number": "2",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7tWhADrsYMRxcBj4Ps7fU2ByXD7UJAALCHgACH1kJV5DLEEhWX3O6NgQ",
+                                    "file_unique_id": "AgADwh4AAh9ZCVc",
+                                    "file_size": "35.69 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7zWhAH4chut6WMdBnSLRbQQ4_PzSVAALDHgACH1kJV8jdn9b1I7dYNgQ",
+                                    "file_unique_id": "AgADwx4AAh9ZCVc",
+                                    "file_size": "95.62 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7h2hAB83B2JfxzMebBmH3zuFjX1auAALFHgACH1kJVxWeabm_GqyNNgQ",
+                                    "file_unique_id": "AgADxR4AAh9ZCVc",
+                                    "file_size": "142.35 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_2"
+                        },
+                        "Episode 3": {
+                            "ep_name": "Episode 3",
+                            "ep_number": "3",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7tmhADruFQgABnvX2jlxTGpiDfZ7EGAACxh4AAh9ZCVfkiXw7S3jzozYE",
+                                    "file_unique_id": "AgADxh4AAh9ZCVc",
+                                    "file_size": "34.50 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7zmhAH4hdr-BV2tzP3vy_eb8-086WAALHHgACH1kJV4MIkqtF5g2INgQ",
+                                    "file_unique_id": "AgADxx4AAh9ZCVc",
+                                    "file_size": "92.07 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7iGhAB87Iqmb9EHuuo_Vo28fnI9TBAALIHgACH1kJV_oz7vBiXiwRNgQ",
+                                    "file_unique_id": "AgADyB4AAh9ZCVc",
+                                    "file_size": "134.96 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_3"
+                        },
+                        "Episode 4": {
+                            "ep_name": "Episode 4",
+                            "ep_number": "4",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7t2hADrw6fWFRH4vPNTsUnzGWnDy-AALJHgACH1kJVwlyO85n4_8DNgQ",
+                                    "file_unique_id": "AgADyR4AAh9ZCVc",
+                                    "file_size": "35.38 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7z2hAH4kGmXO_9moyeXbZsZaIWOlbAALKHgACH1kJV9R7glVg0PDrNgQ",
+                                    "file_unique_id": "AgADyh4AAh9ZCVc",
+                                    "file_size": "93.79 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7iWhAB8-tEQ2zyOpBb7035_KbyqnqAALLHgACH1kJV8GW953Vgy6UNgQ",
+                                    "file_unique_id": "AgADyx4AAh9ZCVc",
+                                    "file_size": "141.62 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_4"
+                        },
+                        "Episode 5": {
+                            "ep_name": "Episode 5",
+                            "ep_number": "5",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7uGhADr0hUtj_e0mo1b3_SlCqIZLTAALMHgACH1kJV4Fzrh1GhtiwNgQ",
+                                    "file_unique_id": "AgADzB4AAh9ZCVc",
+                                    "file_size": "40.74 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK70GhAH4mIZKb3IcmJLejnI9_qoj-cAALNHgACH1kJV5itWk8eznjQNgQ",
+                                    "file_unique_id": "AgADzR4AAh9ZCVc",
+                                    "file_size": "114.81 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7imhAB8-AEJWPX9wIe_ZHN7AUMvHLAALOHgACH1kJV3nm2N0gORVhNgQ",
+                                    "file_unique_id": "AgADzh4AAh9ZCVc",
+                                    "file_size": "174.22 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_5"
+                        },
+                        "Episode 6": {
+                            "ep_name": "Episode 6",
+                            "ep_number": "6",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7uWhADr4_Rru84Ti-ccW7-jh6P1WbAALPHgACH1kJVwRIukEzeoJ2NgQ",
+                                    "file_unique_id": "AgADzx4AAh9ZCVc",
+                                    "file_size": "36.51 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK70WhAH4o-JI9-75mdhNZ6AeDixZ51AALQHgACH1kJV2OgSwaS8laaNgQ",
+                                    "file_unique_id": "AgAD0B4AAh9ZCVc",
+                                    "file_size": "99.46 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7i2hAB9BCb53grkkEbO1znAvPYlToAALRHgACH1kJVwXnef0iPxnDNgQ",
+                                    "file_unique_id": "AgAD0R4AAh9ZCVc",
+                                    "file_size": "144.35 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_6"
+                        },
+                        "Episode 7": {
+                            "ep_name": "Episode 7",
+                            "ep_number": "7",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7umhADr79nBOWLqv13kNPsDAU5ki3AALSHgACH1kJV-oonk-wBvadNgQ",
+                                    "file_unique_id": "AgAD0h4AAh9ZCVc",
+                                    "file_size": "31.80 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK70mhAH4vXayQwGLIBPGBbUiToi2h2AALTHgACH1kJV06U_RYGYrddNgQ",
+                                    "file_unique_id": "AgAD0x4AAh9ZCVc",
+                                    "file_size": "83.87 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7jGhAB9ETbHFUKGLxfLuZPHqOpeuGAALUHgACH1kJV11Q6ZqhCC-gNgQ",
+                                    "file_unique_id": "AgAD1B4AAh9ZCVc",
+                                    "file_size": "124.65 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_7"
+                        },
+                        "Episode 8": {
+                            "ep_name": "Episode 8",
+                            "ep_number": "8",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7u2hADr-r5BDSRf9eQ32FNo82fcf7AALVHgACH1kJV66Z_1i8AAGp4DYE",
+                                    "file_unique_id": "AgAD1R4AAh9ZCVc",
+                                    "file_size": "37.27 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK702hAH4uvbAlQCVrgpfuGJxtIjuAUAALWHgACH1kJV0lfoGi_LxS_NgQ",
+                                    "file_unique_id": "AgAD1h4AAh9ZCVc",
+                                    "file_size": "108.12 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7jWhAB9FaV5QBJg7Rcrimj1H3mNagAALXHgACH1kJV9pQllCyRcubNgQ",
+                                    "file_unique_id": "AgAD1x4AAh9ZCVc",
+                                    "file_size": "156.85 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_8"
+                        },
+                        "Episode 9": {
+                            "ep_name": "Episode 9",
+                            "ep_number": "9",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7vGhADsDpZU-Ia7CnLX4BEOvm-GldAALYHgACH1kJVz5q76IWemx1NgQ",
+                                    "file_unique_id": "AgAD2B4AAh9ZCVc",
+                                    "file_size": "33.24 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK71GhAH4xVDgG35kU47HY4MJueslcTAALZHgACH1kJV79YvIIbZsgkNgQ",
+                                    "file_unique_id": "AgAD2R4AAh9ZCVc",
+                                    "file_size": "88.79 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7jmhAB9If3XpGY08w16ytAa9oeSSuAALaHgACH1kJV5wJLM3jYmQkNgQ",
+                                    "file_unique_id": "AgAD2h4AAh9ZCVc",
+                                    "file_size": "130.67 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_9"
+                        },
+                        "Episode 10": {
+                            "ep_name": "Episode 10",
+                            "ep_number": "10",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7vWhADsGRbgVQb7THWdvzQXqj58MpAALbHgACH1kJVyMs_-B3S16uNgQ",
+                                    "file_unique_id": "AgAD2x4AAh9ZCVc",
+                                    "file_size": "31.15 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK71WhAH41LW8ews1e_uxLxi_fYlp0OAALcHgACH1kJV4klqprc-2dENgQ",
+                                    "file_unique_id": "AgAD3B4AAh9ZCVc",
+                                    "file_size": "85.40 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7j2hAB9OCoX37SQGeM3ivTrfXSblbAALdHgACH1kJV6naMBS8mpKsNgQ",
+                                    "file_unique_id": "AgAD3R4AAh9ZCVc",
+                                    "file_size": "121.47 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_10"
+                        },
+                        "Episode 11": {
+                            "ep_name": "Episode 11",
+                            "ep_number": "11",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7vmhADsHvH5SkUkHZofHm-dM8CvIiAALeHgACH1kJVx6jsf4lko6CNgQ",
+                                    "file_unique_id": "AgAD3h4AAh9ZCVc",
+                                    "file_size": "42.41 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK71mhAH46GQUm18OW2QNnfkykatRYfAALfHgACH1kJV0A413J7qIalNgQ",
+                                    "file_unique_id": "AgAD3x4AAh9ZCVc",
+                                    "file_size": "116.51 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7kGhAB9R2fmETXBG_fNbrSstmEPljAALgHgACH1kJV12nzHmcnEnINgQ",
+                                    "file_unique_id": "AgAD4B4AAh9ZCVc",
+                                    "file_size": "178.03 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_11"
+                        },
+                        "Episode 12": {
+                            "ep_name": "Episode 12",
+                            "ep_number": "12",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7v2hADsKPdvkypQgv3xmtidGbmqkcAAJxFAACDfWBV6KJylSTlCO5NgQ",
+                                    "file_unique_id": "AgADcRQAAg31gVc",
+                                    "file_size": "33.95 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK712hAH48CGQZq3flcVyaCQLgxsSt4AAJyFAACDfWBVwc8Xityv_wGNgQ",
+                                    "file_unique_id": "AgADchQAAg31gVc",
+                                    "file_size": "119.06 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7kWhAB9QdW0IN6U3_YXoLksrM-iW_AAJzFAACDfWBV1FhnaIXKoz7NgQ",
+                                    "file_unique_id": "AgADcxQAAg31gVc",
+                                    "file_size": "191.73 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_12"
+                        },
+                        "Episode 13": {
+                            "ep_name": "Episode 13",
+                            "ep_number": "13",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7wGhADsNyN-7U7xFQgNW5kEyMcyVIAAJ1FAACDfWBVxrd4iF5nDz1NgQ",
+                                    "file_unique_id": "AgADdRQAAg31gVc",
+                                    "file_size": "37.62 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK72GhAH4-L0MpzGRNVgXzytBuPr2mNAAJ2FAACDfWBV4bfO3ZorI3vNgQ",
+                                    "file_unique_id": "AgADdhQAAg31gVc",
+                                    "file_size": "137.98 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7kmhAB9UsrXipRdjYxS68_7HjGYAkAAJ4FAACDfWBVyMDEgtMvLWYNgQ",
+                                    "file_unique_id": "AgADeBQAAg31gVc",
+                                    "file_size": "222.83 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_13"
+                        },
+                        "Episode 14": {
+                            "ep_name": "Episode 14",
+                            "ep_number": "14",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7wWhADsTLjHvK0euvgQ-GE7FOsPgZAALfFAAC2IshVM1YRQjyaf4mNgQ",
+                                    "file_unique_id": "AgAD3xQAAtiLIVQ",
+                                    "file_size": "38.45 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK72WhAH5D3cB3Vha4o6ZWBxcgPCmqPAALgFAAC2IshVMikjarsjFE8NgQ",
+                                    "file_unique_id": "AgAD4BQAAtiLIVQ",
+                                    "file_size": "125.68 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7k2hAB9b3VIl3OtzjDETnpDMd4f8xAALhFAAC2IshVHUdIyYoXOQzNgQ",
+                                    "file_unique_id": "AgAD4RQAAtiLIVQ",
+                                    "file_size": "191.91 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_14"
+                        },
+                        "Episode 15": {
+                            "ep_name": "Episode 15",
+                            "ep_number": "15",
+                            "qualities": {
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7lGhAB9ebWYK0ppszqy1yztkS5uGMAAIIFwACJN9gVL9vMKWALVXANgQ",
+                                    "file_unique_id": "AgADCBcAAiTfYFQ",
+                                    "file_size": "187.40 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7Rmg_scChiIMB4ytiLO_nRekB_DUtAAIJFwACJN9gVFVLV-kNn5B0NgQ",
+                                    "file_unique_id": "AgADCRcAAiTfYFQ",
+                                    "file_size": "118.80 MB"
+                                },
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7wmhADsT61OuLHrv4q75LD3nhyLfMAAIKFwACJN9gVBf4wIqPjf2eNgQ",
+                                    "file_unique_id": "AgADChcAAiTfYFQ",
+                                    "file_size": "36.45 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_15"
+                        },
+                        "Episode 16": {
+                            "ep_name": "Episode 16",
+                            "ep_number": "16",
+                            "qualities": {
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7lWhAB9dE42i7AAGcIpbAdFgs2S7itAACDRcAAiTfYFT0Ht_UCp6NhDYE",
+                                    "file_unique_id": "AgADDRcAAiTfYFQ",
+                                    "file_size": "184.10 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK722hAH5GyzwTdOYzDv3a3TKnUxAQLAAIOFwACJN9gVASPQrggDmLVNgQ",
+                                    "file_unique_id": "AgADDhcAAiTfYFQ",
+                                    "file_size": "113.69 MB"
+                                },
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7w2hADsVz8x0skRjxq3Xp1H7MOTR4AAIPFwACJN9gVEm7o9cGGuVENgQ",
+                                    "file_unique_id": "AgADDxcAAiTfYFQ",
+                                    "file_size": "32.58 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_16"
+                        },
+                        "Episode 17": {
+                            "ep_name": "Episode 17",
+                            "ep_number": "17",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7xGhADsbIbRChIL58jnyLszYR_qk8AAKBFAACFYCpVJVX61AD9d1oNgQ",
+                                    "file_unique_id": "AgADgRQAAhWAqVQ",
+                                    "file_size": "39.74 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK73GhAH5KibZHxzmzZSDtNFDVtTayVAALzHAACF_yoVDwFmSOx8yYINgQ",
+                                    "file_unique_id": "AgAD8xwAAhf8qFQ",
+                                    "file_size": "134.76 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7lmhAB9gW23uODOC5-LlX-qfyfsfIAAKCFAACFYCpVNFvaO4sr_HTNgQ",
+                                    "file_unique_id": "AgADghQAAhWAqVQ",
+                                    "file_size": "212.68 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_17"
+                        },
+                        "Episode 18": {
+                            "ep_name": "Episode 18",
+                            "ep_number": "18",
+                            "qualities": {
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7l2hAB9mAgJRYo46hbNYE3X69N2HSAAIkFQACqe34VGJFz3Fx-PQNNgQ",
+                                    "file_unique_id": "AgADJBUAAqnt-FQ",
+                                    "file_size": "198.21 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK73WhAH5N2qy9hbDcj59SVJ3T655ViAAImFQACqe34VBeKuU4pX2F9NgQ",
+                                    "file_unique_id": "AgADJhUAAqnt-FQ",
+                                    "file_size": "123.01 MB"
+                                },
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7xWhADsc4ZUH1a-b3HPSemZwHERSVAAIoFQACqe34VMElxDxTl5WfNgQ",
+                                    "file_unique_id": "AgADKBUAAqnt-FQ",
+                                    "file_size": "34.60 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_18"
+                        },
+                        "Episode 19": {
+                            "ep_name": "Episode 19",
+                            "ep_number": "19",
+                            "qualities": {
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7mGhAB9pmAWxyJLSiWu_8jKg6xpKoAAL_FQACjrWRVRZLedLJ2Fk5NgQ",
+                                    "file_unique_id": "AgAD_xUAAo61kVU",
+                                    "file_size": "70.66 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7gGhAAlC0BxpJYyLeGTotB_mVW5DSAAIBFgACjrWRVdNqwZfWlaUUNgQ",
+                                    "file_unique_id": "AgADARYAAo61kVU",
+                                    "file_size": "59.96 MB"
+                                },
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7x2hADsfR_Oi2u9uf75RYXt-bSTe_AAICFgACjrWRVewuNZzIhvJzNgQ",
+                                    "file_unique_id": "AgADAhYAAo61kVU",
+                                    "file_size": "35.13 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_19"
+                        },
+                        "Episode 20": {
+                            "ep_name": "Episode 20",
+                            "ep_number": "20",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7RGg_sAqPx3i3crgAAR4uQdrr-A1-cwACOxsAAsRz0VVbmi6IAz--ljYE",
+                                    "file_unique_id": "AgADOxsAAsRz0VU",
+                                    "file_size": "40.55 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK732hAH5TpOTD4-B-reT7p7DE1T6QbAAI8GwACxHPRVQJoQ3OWb2-RNgQ",
+                                    "file_unique_id": "AgADPBsAAsRz0VU",
+                                    "file_size": "103.93 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAxkDAAK7mWhAB9omQYBiW-Hyfwa__EfFk0hwAAI9GwACxHPRVWcVPqP2HsRYNgQ",
+                                    "file_unique_id": "AgADPRsAAsRz0VU",
+                                    "file_size": "155.96 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_20"
+                        },
+                        "Episode 21": {
+                            "ep_name": "Episode 21",
+                            "ep_number": "21",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAyEFAASL1Ou-AANGaEM0oxHiCVqd0jDJfzr4Fu2a-TAAAiUYAAL5vRhWzLmMNRFgNCI2BA",
+                                    "file_unique_id": "AgADJRgAAvm9GFY",
+                                    "file_size": "39.90 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAyEFAASL1Ou-AANHaEM0ucjhBzEzA7a728me7ok_sD8AAiYYAAL5vRhWXz60qLFNiRU2BA",
+                                    "file_unique_id": "AgADJhgAAvm9GFY",
+                                    "file_size": "102.33 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAyEFAASL1Ou-AANIaEM02nCcru4i65NUHoDP8DYD-k0AAicYAAL5vRhWJUdv3FRFbfg2BA",
+                                    "file_unique_id": "AgADJxgAAvm9GFY",
+                                    "file_size": "153.12 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_21"
+                        },
+                        "Episode 22": {
+                            "ep_name": "Episode 22",
+                            "ep_number": "22",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAyEFAASL1Ou-AANJaExafBeqi-K9bd3rxiatLwWtHBsAAiQZAAKhtWFW_HWrp6fOTww2BA",
+                                    "file_unique_id": "AgADJBkAAqG1YVY",
+                                    "file_size": "30.93 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAyEFAASL1Ou-AANKaExaj5Z0hGzunRJh6KU3tz1sHZ4AAiYZAAKhtWFWcQABCYztsizLNgQ",
+                                    "file_unique_id": "AgADJhkAAqG1YVY",
+                                    "file_size": "66.55 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAyEFAASL1Ou-AANLaExaqDJTPw6BumCzCSwoUoMPAAFZAAInGQACobVhVi-50SU7bXV3NgQ",
+                                    "file_unique_id": "AgADJxkAAqG1YVY",
+                                    "file_size": "106.34 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_22"
+                        },
+                        "Episode 23": {
+                            "ep_name": "Episode 23",
+                            "ep_number": "23",
+                            "qualities": {
+                                "360p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAyEFAASL1Ou-AANMaGAwtopIh-zJT_rmAAG_8SvUhrSTAAL4FgACawcBVzicgyw_uYgpNgQ",
+                                    "file_unique_id": "AgAD-BYAAmsHAVc",
+                                    "file_size": "33.46 MB"
+                                },
+                                "720p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAyEFAASL1Ou-AANNaGAwxj9rhXTBpFbSZ8O_e4DqgJoAAvoWAAJrBwFX8hqobWAjYgo2BA",
+                                    "file_unique_id": "AgAD-hYAAmsHAVc",
+                                    "file_size": "74.35 MB"
+                                },
+                                "1080p": {
+                                    "file_url": "n/a",
+                                    "file_id": "BAACAgUAAyEFAASL1Ou-AANOaGAw4e7RYBbRdp0B5a5kvzOY5ZkAAvsWAAJrBwFX-idm43-G1o82BA",
+                                    "file_unique_id": "AgAD-xYAAmsHAVc",
+                                    "file_size": "119.56 MB"
+                                }
+                            },
+                            "duration": "",
+                            "status": "",
+                            "aired_on": "",
+                            "episode_link": "https://t.me/NoasagaAnime_bot?start=67898_s2_23"
+                        }
           }
         }
       }
